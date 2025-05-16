@@ -3,7 +3,89 @@
 <head>
   <meta charset="UTF-8" />
   <title>Поддержка</title>
-  <link rel="stylesheet" href="style.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      line-height: 1.6;
+    }
+    .container {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+    header.header {
+      background-color: #007BFF;
+      color: white;
+      padding: 15px 0;
+    }
+    .logo {
+      float: left;
+      margin: 0;
+    }
+    nav.nav {
+      float: right;
+    }
+    nav.nav a {
+      color: white;
+      text-decoration: none;
+      margin-left: 20px;
+      font-weight: bold;
+    }
+    section.hero {
+      padding: 60px 0;
+      text-align: center;
+    }
+    section.hero ul {
+      list-style: none;
+      padding: 0;
+      margin-top: 20px;
+    }
+    section.hero li {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      margin-bottom: 10px;
+    }
+    section.hero li img {
+      width: 20px;
+      height: 20px;
+    }
+    footer.footer {
+      background-color: #f8f9fa;
+      padding: 40px 0;
+    }
+    .footer-columns {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+    .footer-section {
+      flex: 1 1 45%;
+      min-width: 250px;
+      margin-bottom: 20px;
+    }
+    .footer-section h4 {
+      margin-bottom: 10px;
+    }
+    @media (max-width: 600px) {
+      nav.nav {
+        float: none;
+        text-align: center;
+        margin-top: 15px;
+      }
+      nav.nav a {
+        display: block;
+        margin: 10px 0;
+      }
+      .footer-columns {
+        flex-direction: column;
+      }
+    }
+  </style>
 </head>
 <body>
 
@@ -27,9 +109,18 @@
       <h2>Свяжитесь с нами</h2>
       <p>Если у вас возникли вопросы или вам нужна помощь — вы можете связаться с нашей командой следующими способами:</p>
       <ul>
-        <li>📧 Email: <a href="mailto:support@skillup.ru">support@skillup.ru</a></li>
-        <li>💬 Telegram: <a href="https://t.me/skillup_support ">@skillup_support</a></li>
-        <li>📞 Телефон: (пока отсутствует)</li>
+        <li>
+          <img src="https://cdn-icons-png.flaticon.com/512/732/732200.png " alt="Email">
+          <span>Email: <a href="mailto:support@skillupofficial.ru">support@skillupofficial.ru</a></span>
+        </li>
+        <li>
+          <img src="https://upload.wikimedia.org/wikipedia/commons/8/82/Telegram_2019_Logo.svg " alt="Telegram" style="filter: invert(1);">
+          <span>Telegram: <a href="https://t.me/skillup_official ">@skillup_official</a></span>
+        </li>
+        <li>
+          <img src="https://cdn-icons-png.flaticon.com/512/2597/2597854.png " alt="Phone">
+          <span>Телефон: +7 (800) 123-45-67</span>
+        </li>
       </ul>
       <p>Мы всегда рады помочь!</p>
     </div>
@@ -41,8 +132,8 @@
       <div class="footer-columns">
         <div class="footer-section">
           <h4>Контакты организаторов</h4>
-          <p>Email: team@skillup.ru</p>
-          <p>Telegram: @skillup_support</p>
+          <p>Email: team@skillupofficial.ru</p>
+          <p>Telegram: @skillup_official</p>
         </div>
         <div class="footer-section">
           <h4>Информация о проекте</h4>
@@ -53,7 +144,5 @@
     </div>
   </footer>
 
-  <!-- JS -->
-  <script src="script.js"></script>
 </body>
 </html>
