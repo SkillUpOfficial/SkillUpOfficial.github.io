@@ -158,6 +158,10 @@ h1, h2, h3, h4 {
 
 /* Отзывы */
 /* Центрирование заголовка и отзывов */
+/* Центрирование всех h2 внутри секций */
+section h2 {
+  text-align: center;
+}
 .reviews {
   padding: 60px 20px;
   background-color: #1e1e1e;
