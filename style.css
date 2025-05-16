@@ -1,0 +1,38 @@
+/* style.css */
+
+/* Custom animations */
+@keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  
+  /* Custom hover effects */
+  .button-hover-effect:hover {
+    transform: scale(1.05);
+  }
+  
+  /* Custom card shadow */
+  .card-shadow {
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
+  }
+  
+  /* Custom gradient background for main section */
+  .main-section-bg {
+    background: linear-gradient(135deg, #63b7af 0%, #dc2f02 100%);
+  }
+  
+  /* Custom form focus effect */
+  .form-input:focus {
+    outline: none;
+    border-color: #63b7af;
+    box-shadow: 0 0 0 3px rgba(99, 183, 175, 0.5);
+  }
+  
+  /* Custom footer border */
+  .footer-border {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+  }
