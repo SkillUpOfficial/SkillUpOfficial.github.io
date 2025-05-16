@@ -211,3 +211,35 @@ h1, h2, h3, h4 {
 
 .footer-section {
   flex: 1
+.profile-form {
+  max-width: 600px;
+  margin: 0 auto;
+  background: #1e1e1e;
+  padding: 30px;
+  border-radius: 8px;
+}
+
+.profile-form label {
+  display: block;
+  margin-bottom: 15px;
+}
+
+.profile-form input,
+.profile-form select,
+.profile-form textarea {
+  width: 100%;
+  padding: 10px;
+  background: #2c2c2c;
+  border: none;
+  border-radius: 4px;
+  color: white;
+  margin-top: 5px;
+}
+
+.profile-form select {
+  height: 80px;
+}
+
+.profile-form .btn {
+  margin-top: 20px;
+}
