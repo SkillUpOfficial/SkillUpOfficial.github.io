@@ -1,3 +1,7 @@
+/* Центрируем все h2 по центру */
+h2 {
+  text-align: center !important;
+}
 /* Общие стили */
 * {
   margin: 0;
