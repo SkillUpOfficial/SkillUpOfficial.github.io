@@ -99,9 +99,9 @@ h1, h2, h3, h4 {
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.course:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 10px 20px rgba(108, 71, 255, 0.2);
+/* Центрирование заголовков */
+.courses h2 {
+  text-align: center;
 }
 
 .course h3 {
