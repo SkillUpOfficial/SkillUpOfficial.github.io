@@ -6,8 +6,76 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <h1>Ваш профиль</h1>
-  <p>Здесь будет информация о пользователе, история покупок и прогресс обучения.</p>
-  <a href="index.html">← Назад на главную</a>
+
+  <!-- Шапка сайта -->
+  <header class="header">
+    <div class="container">
+      <h1 class="logo">SkillUp</h1>
+      <nav class="nav">
+        <a href="index.html#courses">Курсы</a>
+        <a href="about.html">О нас</a>
+        <a href="index.html#payment">Оплата</a>
+        <a href="support.html">Поддержка</a>
+        <a href="profile.html">Профиль</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Профиль -->
+  <section class="hero">
+    <div class="container profile-container">
+      <h2>Ваш профиль</h2>
+      <form class="profile-form">
+        <label>
+          Имя:
+          <input type="text" value="Александр" readonly />
+        </label>
+        <label>
+          Фамилия:
+          <input type="text" value="Иванов" readonly />
+        </label>
+        <label>
+          Почта:
+          <input type="email" value="alex@example.com" readonly />
+        </label>
+        <label>
+          Мои курсы:
+          <select multiple disabled>
+            <option>Маркетинг для начинающих</option>
+            <option>Продвинутый Python</option>
+          </select>
+        </label>
+        <label>
+          История:
+          <textarea rows="5" readonly>
+Вы приобрели 2 курса.
+Дата последней активности: 10 апреля 2025 г.
+          </textarea>
+        </label>
+        <button type="button" class="btn">Редактировать</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- Футер -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-columns">
+        <div class="footer-section">
+          <h4>Контакты организаторов</h4>
+          <p>Email: team@skillup.ru</p>
+          <p>Telegram: @skillup_support</p>
+        </div>
+        <div class="footer-section">
+          <h4>Информация о проекте</h4>
+          <p>© SkillUp 2025. Все права защищены.</p>
+          <p><a href="#">Политика конфиденциальности</a></p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- JS -->
+  <script src="script.js"></script>
 </body>
 </html>
