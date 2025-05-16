@@ -111,7 +111,39 @@ h1, h2, h3, h4 {
 .course h3 {
   color: #FFA500;
 }
+/* Кнопки "Подробнее" */
+.btn-details {
+  display: inline-block;
+  margin-top: 15px;
+  padding: 8px 16px;
+  background-color: #32CD32; /* Зелёный цвет */
+  color: white;
+  text-align: center;
+  border-radius: 6px;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+  text-decoration: none;
+}
 
+.btn-details:hover {
+  background-color: #29a129;
+}
+
+/* Анимация карточек курсов */
+.course {
+  background: #2c2c2c;
+  padding: 20px;
+  border-radius: 8px;
+  flex: 1 1 280px;
+  max-width: 300px;
+  border-left: 5px solid #6C47FF;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.course:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 20px rgba(108, 71, 255, 0.2);
+}
 /* Тарифы */
 .pricing {
   padding: 60px 20px;
