@@ -58,6 +58,7 @@
       border-radius: 4px;
       color: white;
       margin-top: 5px;
+      resize: none; /* Убирает возможность изменения размера */
     }
 
     .buttons {
@@ -69,7 +70,8 @@
 
     .edit-button,
     .save-button,
-    .cancel-button {
+    .cancel-button,
+    .view-button {
       padding: 12px 24px;
       background-color: #6C47FF;
       color: white;
@@ -82,7 +84,8 @@
     }
 
     .edit-button:hover,
-    .save-button:hover {
+    .save-button:hover,
+    .view-button:hover {
       background-color: #5a36d6;
     }
 
@@ -113,45 +116,8 @@
 
   <!-- Профиль -->
   <section class="profile-section">
-    <div class="profile-card">
-      <div class="profile-header">
-        <h2>Ваш профиль</h2>
-        <p style="color: #999;">Информация о вашем аккаунте</p>
-      </div>
-
-      <form id="profile-form">
-        <div class="profile-grid">
-          <div>
-            <label class="profile-label">Имя</label>
-            <input type="text" id="first-name" value="Александр" />
-          </div>
-
-          <div>
-            <label class="profile-label">Фамилия</label>
-            <input type="text" id="last-name" value="Иванов" />
-          </div>
-
-          <div>
-            <label class="profile-label">Почта</label>
-            <input type="email" id="email" value="alex@example.com" />
-          </div>
-
-          <div>
-            <label class="profile-label">Мои курсы</label>
-            <textarea id="courses" rows="3" readonly>Маркетинг для начинающих\nПродвинутый Python</textarea>
-          </div>
-
-          <div>
-            <label class="profile-label">История активности</label>
-            <textarea id="history" rows="3" readonly>Последнее посещение: 10 апреля 2025 г.\nПрогресс обучения: 65%</textarea>
-          </div>
-        </div>
-
-        <div class="buttons">
-          <button type="submit" class="save-button">Сохранить</button>
-          <button type="button" class="cancel-button">Отменить</button>
-        </div>
-      </form>
+    <div class="profile-card" id="profile-card">
+      <!-- Сюда будет подгружаться форма или просмотр -->
     </div>
   </section>
 
@@ -176,37 +142,131 @@
   <!-- JS -->
   <script src="script.js"></script>
   <script>
-    // Загрузка данных из localStorage при открытии страницы
+    const profileCard = document.getElementById('profile-card');
+
+    // Получаем данные из localStorage
+    function getProfileData() {
+      return {
+        firstName: localStorage.getItem('firstName') || 'Александр',
+        lastName: localStorage.getItem('lastName') || 'Иванов',
+        email: localStorage.getItem('email') || 'alex@example.com'
+      };
+    }
+
+    // Режим просмотра
+    function showViewMode() {
+      const data = getProfileData();
+
+      profileCard.innerHTML = `
+        <div class="profile-header">
+          <h2>Ваш профиль</h2>
+          <p style="color: #999;">Информация о вашем аккаунте</p>
+        </div>
+
+        <div class="profile-grid">
+          <div class="profile-field">
+            <span class="profile-label">Имя</span>
+            <span class="profile-value">${data.firstName}</span>
+          </div>
+
+          <div class="profile-field">
+            <span class="profile-label">Фамилия</span>
+            <span class="profile-value">${data.lastName}</span>
+          </div>
+
+          <div class="profile-field">
+            <span class="profile-label">Почта</span>
+            <span class="profile-value">${data.email}</span>
+          </div>
+
+          <div class="profile-field">
+            <span class="profile-label">Мои курсы</span>
+            <ul class="profile-value" style="margin: 0; padding-left: 20px;">
+              <li>Маркетинг для начинающих</li>
+              <li>Продвинутый Python</li>
+            </ul>
+          </div>
+
+          <div class="profile-field">
+            <span class="profile-label">История активности</span>
+            <span class="profile-value">
+              Последнее посещение: 10 апреля 2025 г.<br>
+              Прогресс обучения: 65%
+            </span>
+          </div>
+        </div>
+
+        <div class="buttons">
+          <button class="edit-button" onclick="showEditMode()">Редактировать</button>
+        </div>
+      `;
+    }
+
+    // Режим редактирования
+    function showEditMode() {
+      const data = getProfileData();
+
+      profileCard.innerHTML = `
+        <div class="profile-header">
+          <h2>Редактирование профиля</h2>
+          <p style="color: #999;">Измените свои данные ниже</p>
+        </div>
+
+        <form id="profile-form">
+          <div class="profile-grid">
+            <div>
+              <label class="profile-label">Имя</label>
+              <input type="text" id="first-name" value="${data.firstName}" />
+            </div>
+
+            <div>
+              <label class="profile-label">Фамилия</label>
+              <input type="text" id="last-name" value="${data.lastName}" />
+            </div>
+
+            <div>
+              <label class="profile-label">Почта</label>
+              <input type="email" id="email" value="${data.email}" />
+            </div>
+
+            <div>
+              <label class="profile-label">Мои курсы</label>
+              <textarea id="courses" rows="3" readonly>Маркетинг для начинающих\nПродвинутый Python</textarea>
+            </div>
+
+            <div>
+              <label class="profile-label">История активности</label>
+              <textarea id="history" rows="3" readonly>Последнее посещение: 10 апреля 2025 г.\nПрогресс обучения: 65%</textarea>
+            </div>
+          </div>
+
+          <div class="buttons">
+            <button type="submit" class="save-button">Сохранить</button>
+            <button type="button" class="cancel-button" onclick="showViewMode()">Отменить</button>
+          </div>
+        </form>
+      `;
+
+      // Обработчик формы
+      document.getElementById('profile-form').addEventListener('submit', (e) => {
+        e.preventDefault();
+
+        const firstName = document.getElementById('first-name').value.trim();
+        const lastName = document.getElementById('last-name').value.trim();
+        const email = document.getElementById('email').value.trim();
+
+        localStorage.setItem('firstName', firstName);
+        localStorage.setItem('lastName', lastName);
+        localStorage.setItem('email', email);
+
+        alert('Данные успешно сохранены!');
+        showViewMode(); // Переключаемся обратно в режим просмотра
+      });
+    }
+
+    // Инициализация
     document.addEventListener('DOMContentLoaded', () => {
-      const firstName = localStorage.getItem('firstName') || 'Александр';
-      const lastName = localStorage.getItem('lastName') || 'Иванов';
-      const email = localStorage.getItem('email') || 'alex@example.com';
-
-      document.getElementById('first-name').value = firstName;
-      document.getElementById('last-name').value = lastName;
-      document.getElementById('email').value = email;
-    });
-
-    // Сохранение данных в localStorage
-    document.getElementById('profile-form').addEventListener('submit', (e) => {
-      e.preventDefault();
-
-      const firstName = document.getElementById('first-name').value.trim();
-      const lastName = document.getElementById('last-name').value.trim();
-      const email = document.getElementById('email').value.trim();
-
-      localStorage.setItem('firstName', firstName);
-      localStorage.setItem('lastName', lastName);
-      localStorage.setItem('email', email);
-
-      alert('Данные успешно сохранены!');
-    });
-
-    // Отмена изменений
-    document.querySelector('.cancel-button').addEventListener('click', () => {
-      document.getElementById('first-name').value = localStorage.getItem('firstName') || 'Александр';
-      document.getElementById('last-name').value = localStorage.getItem('lastName') || 'Иванов';
-      document.getElementById('email').value = localStorage.getItem('email') || 'alex@example.com';
+      showViewMode();
     });
   </script>
 </body>
