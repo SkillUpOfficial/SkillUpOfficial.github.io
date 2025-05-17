@@ -603,36 +603,3 @@ h1, h2, h3, h4 {
 .footer-section p {
   margin-bottom: 0.75rem;
 }
-
-/* === Темы === */
-body.dark-theme {
-  --bg-color: #1e1e1e;
-  --text-color: #f5f5f5;
-  --card-bg: #2c2c2c;
-  --accent-color: #6C47FF;
-  --icon-color: #e67e22;
-}
-
-body.light-theme {
-  --bg-color: #ffffff;
-  --text-color: #333;
-  --card-bg: #f9f9f9;
-  --accent-color: #3498db;
-  --icon-color: #f1c40f;
-}
-
-/* === Общие стили для тем === */
-body {
-  background-color: var(--bg-color);
-  color: var(--text-color);
-  transition: background-color 0.3s, color 0.3s;
-}
-
-/* === Цвета ссылок и иконок === */
-a {
-  color: var(--accent-color);
-}
-
-.footer-section p i, .profile-label-icon {
-  color: var(--icon-color);
-}
