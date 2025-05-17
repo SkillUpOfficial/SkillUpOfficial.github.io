@@ -467,16 +467,28 @@ section h2 {
     text-overflow: ellipsis; /* Добавляем многоточие при необходимости */
 }
 
+/* Стили для всех ссылок в меню */
+.nav a {
+    white-space: nowrap;
+    font-size: 16px;
+}
+
 /* Медиазапрос для мобильных устройств */
 @media (max-width: 768px) {
-    .menu {
-        overflow-x: auto; /* Включаем горизонтальный скролл */
+    .nav {
+        display: flex;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch; /* Плавность скролла на iOS */
+        flex-wrap: nowrap;
     }
 
-    .button {
-        font-size: 14px; /* Уменьшаем размер шрифта */
+    .nav a {
+        flex-shrink: 0;
+        padding: 10px 15px;
+        font-size: 14px;
         white-space: nowrap;
         overflow: hidden;
         text-overflow: ellipsis;
+        min-width: 90px;
     }
 }
