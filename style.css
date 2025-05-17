@@ -587,3 +587,13 @@ h1, h2, h3, h4 {
   transform: translateY(-2px); /* Микроанимация */
   box-shadow: 0 4px 8px rgba(0,0,0,0.15); /* Усиливаем тень */
 }
+
+.nav a i {
+  margin-right: 5px; /* Отступ между иконкой и текстом */
+  font-size: 1.2rem; /* Размер иконки */
+  transition: color 0.3s ease;
+}
+
+.nav a:hover i {
+  color: #e67e22; /* Цвет иконки при наведении */
+}
