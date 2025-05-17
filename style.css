@@ -455,10 +455,11 @@ h1, h2, h3, h4 {
   font-size: 1.1rem;
 }
 
-/* Градиентный фон для секции поддержки */
 .support-section {
   padding: 4rem 2rem;
-  background: linear-gradient(135deg, #f0f4ff, #e8f4ff); /* ❌ Светло-голубой фон */
+  background-color: #1e1e1e; /* ✅ Тёмно-серый фон */
+}
+
 }
 
 /* Заголовки */
