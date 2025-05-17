@@ -450,12 +450,12 @@ section h2 {
 }
 
 @media (max-width: 768px) {
-    #about-button {
-        white-space: nowrap !important;
-        overflow: hidden !important;
-        text-overflow: ellipsis !important;
-        font-size: 12px !important;
-        display: inline-block !important;
-        width: auto !important;
+    .nav a.button {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        font-size: 12px;
+        display: inline-block;
+        width: auto;
     }
 }
