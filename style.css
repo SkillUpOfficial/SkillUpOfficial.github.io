@@ -51,7 +51,7 @@ h1, h2, h3, h4 {
 /* Меню навигации */
 .nav {
   display: flex;
-  justify-content: flex-start; /* Кнопки выровнены по левому краю */
+  justify-content: flex-start;
   align-items: center;
   flex-wrap: nowrap;
   overflow-x: auto;
@@ -86,7 +86,7 @@ h1, h2, h3, h4 {
 
 @media (min-width: 769px) {
   .nav {
-    gap: 30px; /* Фиксированное расстояние между кнопками */
+    gap: 30px;
   }
 }
 
@@ -362,27 +362,12 @@ h1, h2, h3, h4 {
   display: flex;
   flex-wrap: wrap;
   gap: 30px;
-  justify-content: center; /* Центрируем колонки на десктопе */
-  align-items: flex-start; /* Выравниваем элементы по верхнему краю */
 }
 
 .footer-section {
   flex: 1 1 250px;
   min-width: 200px;
   padding-top: 15px;
-  text-align: left; /* Текст по левому краю на десктопе */
-}
-
-/* Адаптивность для мобильных */
-@media (max-width: 768px) {
-  .footer-columns {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .footer-section {
-    text-align: center; /* Текст по центру на мобильных */
-  }
 }
 
 /* Форма профиля */
