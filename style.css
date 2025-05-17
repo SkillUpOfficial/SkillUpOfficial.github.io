@@ -597,3 +597,13 @@ h1, h2, h3, h4 {
 .nav a:hover i {
   color: #e67e22; /* Цвет иконки при наведении */
 }
+
+#snake-container {
+  background-color: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.2); /* Невидимые границы */
+}
+
+.snake-body {
+  background-color: #6C47FF; /* Цвет тела питона */
+  border-radius: 50%;
+}
