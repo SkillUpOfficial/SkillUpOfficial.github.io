@@ -51,7 +51,7 @@ h1, h2, h3, h4 {
 /* Меню навигации */
 .nav {
   display: flex;
-  justify-content: space-between; /* Равномерное распределение кнопок */
+  justify-content: flex-start; /* Кнопки выровнены по левому краю */
   align-items: center;
   flex-wrap: nowrap;
   overflow-x: auto;
@@ -59,6 +59,8 @@ h1, h2, h3, h4 {
   scrollbar-width: thin;
   scrollbar-color: #6C47FF #222;
   padding-bottom: 8px;
+  max-width: 900px;
+  margin: 0 auto;
 }
 
 .nav::-webkit-scrollbar {
@@ -80,6 +82,12 @@ h1, h2, h3, h4 {
   min-width: 90px;
   text-align: center;
   transition: all 0.2s ease;
+}
+
+@media (min-width: 769px) {
+  .nav {
+    gap: 30px; /* Фиксированное расстояние между кнопками */
+  }
 }
 
 @media (max-width: 768px) {
