@@ -168,3 +168,79 @@ document.querySelectorAll('.nav a[href^="#"]').forEach(anchor => {
 });
 ReactDOM.render(<App />, document.getElementById('root'));
 
+// Инициализация Matter.js
+const Engine = Matter.Engine,
+      Render = Matter.Render,
+      Runner = Matter.Runner,
+      Bodies = Matter.Bodies,
+      Composite = Matter.Composite;
+
+// Создание мира
+const engine = Engine.create();
+const world = engine.world;
+
+// Настройки рендера
+const render = Render.create({
+  element: document.getElementById('snake-container'),
+  engine: engine,
+  options: {
+    wireframes: false,
+    background: 'transparent',
+    width: 300,
+    height: 300,
+  }
+});
+
+// Запуск движка
+Engine.run(engine);
+Render.run(render);
+
+// Создание тела питона
+const snakeBody = Bodies.circle(150, 150, 10, { restitution: 0.8 }); // Радиус 10px
+Composite.add(world, snakeBody);
+
+// Добавление событий мыши/тачей
+let isDragging = false;
+let mousePosition = { x: 0, y: 0 };
+
+document.addEventListener('mousedown', (e) => {
+  isDragging = true;
+  const bounds = e.target.getBoundingClientRect();
+  mousePosition.x = e.clientX - bounds.left;
+  mousePosition.y = e.clientY - bounds.top;
+});
+
+document.addEventListener('mousemove', (e) => {
+  if (isDragging) {
+    const bounds = e.target.getBoundingClientRect();
+    const newX = e.clientX - bounds.left;
+    const newY = e.clientY - bounds.top;
+    Matter.Body.setPosition(snakeBody, { x: newX, y: newY });
+  }
+});
+
+document.addEventListener('mouseup', () => {
+  isDragging = false;
+});
+
+document.addEventListener('touchstart', (e) => {
+  isDragging = true;
+  const touch = e.touches[0];
+  const bounds = e.target.getBoundingClientRect();
+  mousePosition.x = touch.clientX - bounds.left;
+  mousePosition.y = touch.clientY - bounds.top;
+});
+
+document.addEventListener('touchmove', (e) => {
+  if (isDragging) {
+    const touch = e.touches[0];
+    const bounds = e.target.getBoundingClientRect();
+    const newX = touch.clientX - bounds.left;
+    const newY = touch.clientY - bounds.top;
+    Matter.Body.setPosition(snakeBody, { x: newX, y: newY });
+  }
+});
+
+document.addEventListener('touchend', () => {
+  isDragging = false;
+});
