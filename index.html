@@ -24,7 +24,7 @@
   <script>window.yaContextCb=window.yaContextCb||[]</script>
   <script src="https://yandex.ru/ads/system/context.js " async></script>
 </head>
-<body>
+<body class="dark-theme"> <!-- Темная тема по умолчанию -->
 
 <!-- Шапка сайта -->
 <header class="header">
@@ -37,6 +37,11 @@
       <a href="support.html">Поддержка</a>
       <a href="profile.html">Профиль</a>
     </nav>
+    
+    <!-- Переключатель темы -->
+    <button id="theme-toggle" class="theme-button" title="Переключить тему">
+      <i class="fas fa-moon" id="theme-icon"></i>
+    </button>
   </div>
 </header>
 
@@ -196,5 +201,7 @@ window.yaContextCb.push(() => {
 
 <!-- JS -->
 <script src="script.js"></script>
+<!-- JS для темы -->
+<script src="theme-toggle.js"></script>
 </body>
 </html>
