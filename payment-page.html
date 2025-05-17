@@ -5,14 +5,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Оплата | SkillUp</title>
 
-<!-- Favicon -->
-<link rel="icon" href="assets/favicon.ico" type="image/x-icon">
-<link rel="shortcut icon" href="assets/favicon.ico" type="image/x-icon">
-<link rel="icon" href="assets/favicon-16x16.png" sizes="16x16" type="image/png">
-<link rel="icon" href="assets/favicon-32x32.png" sizes="32x32" type="image/png">
-<link rel="icon" href="assets/favicon-64x64.png" sizes="64x64" type="image/png">
-<link rel="icon" href="assets/favicon-128x128.png" sizes="128x128" type="image/png">
-  
+  <!-- Favicon -->
+  <link rel="icon" href="assets/favicon.ico" type="image/x-icon">
+  <link rel="shortcut icon" href="assets/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="assets/favicon-16x16.png" sizes="16x16" type="image/png">
+  <link rel="icon" href="assets/favicon-32x32.png" sizes="32x32" type="image/png">
+  <link rel="icon" href="assets/favicon-64x64.png" sizes="64x64" type="image/png">
+  <link rel="icon" href="assets/favicon-128x128.png" sizes="128x128" type="image/png">
+
+  <!-- Font Awesome CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css " 
+        integrity="sha512-..." 
+        crossorigin="anonymous" />
+
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
@@ -32,46 +37,58 @@
   </header>
 
   <!-- Секция оплаты -->
-<section class="payment-section payment-extended">
-  <div class="container">
-    <h2>Оплата через DonationAlerts</h2>
-    <p>Для оплаты выбранного тарифа перейдите по ссылке ниже:</p>
+  <section class="payment-section payment-extended">
+    <div class="container">
+      <h2>Оплата через DonationAlerts</h2>
+      <p>Для оплаты выбранного тарифа перейдите по ссылке ниже:</p>
 
-    <!-- Кнопка оплаты -->
-    <div class="payment-button">
-      <a href="https://donationalerts.com/r/your-link " target="_blank" class="btn-pay">Перейти к оплате</a>
-    </div>
+      <!-- Кнопка оплаты -->
+      <div class="payment-button">
+        <a href="https://donationalerts.com/r/your-link " target="_blank" class="btn-pay">Перейти к оплате</a>
+      </div>
 
-    <!-- Инструкция после оплаты -->
-    <div class="payment-info">
-      <p>После оплаты отправьте скриншот подтверждения оплаты и данные профиля сюда: <a href="https://t.me/skill_upp_bot " target="_blank">Бот</a>.</p>
-    </div>
-  </div>
-</section>
-
- <!-- Футер -->
-<footer class="footer">
-  <div class="container">
-    <div class="footer-columns">
-      <div class="footer-section">
-        <h4>Контакты организаторов</h4>
-        <p>Email: 
-          <a href="https://mail.google.com/mail/?view=cm&fs=1&to=skillupruu @gmail.com" 
-             target="_blank" 
-             rel="noopener noreferrer">
-            skillupruu@gmail.com
-          </a>
+      <!-- Инструкция после оплаты -->
+      <div class="payment-info">
+        <p>После оплаты отправьте скриншот подтверждения оплаты и данные профиля сюда: 
+          <a href="https://t.me/skill_upp_bot " target="_blank">
+            <i class="fa-brands fa-telegram"></i> Бот
+          </a>.
         </p>
-        <p>Telegram: <a href="https://t.me/skillup_supports " target="_blank">@skillup_supports</a></p>
-      </div>
-      <div class="footer-section">
-        <h4>Информация о проекте</h4>
-        <p>© SkillUp 2025. Все права защищены.</p>
-        <p><a href="privacy-policy.html">Политика конфиденциальности</a></p>
       </div>
     </div>
-  </div>
-</footer>
+  </section>
 
+  <!-- Футер -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-columns">
+        <div class="footer-section">
+          <h4>Контакты организаторов</h4>
+          <p>
+            <i class="fa-regular fa-envelope"></i>
+            <a href="mailto:skillupruu@gmail.com" 
+               target="_blank" 
+               rel="noopener noreferrer">
+              skillupruu@gmail.com
+            </a>
+          </p>
+          <p>
+            <i class="fa-brands fa-telegram"></i>
+            <a href="https://t.me/skillup_supports " 
+               target="_blank" 
+               rel="noopener noreferrer">@skillup_supports</a>
+          </p>
+        </div>
+        <div class="footer-section">
+          <h4>Информация о проекте</h4>
+          <p>© SkillUp 2025. Все права защищены.</p>
+          <p><a href="privacy-policy.html">Политика конфиденциальности</a></p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- JS -->
+  <script src="script.js"></script>
 </body>
 </html>
