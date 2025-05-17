@@ -2,28 +2,118 @@
 <html lang="ru">
 <head>
   <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Предложить курс</title>
 
-<!-- Favicon -->
-<link rel="icon" href="assets/favicon.ico" type="image/x-icon">
-<link rel="shortcut icon" href="assets/favicon.ico" type="image/x-icon">
-<link rel="icon" href="assets/favicon-16x16.png" sizes="16x16" type="image/png">
-<link rel="icon" href="assets/favicon-32x32.png" sizes="32x32" type="image/png">
-<link rel="icon" href="assets/favicon-64x64.png" sizes="64x64" type="image/png">
-<link rel="icon" href="assets/favicon-128x128.png" sizes="128x128" type="image/png">
-  
+  <!-- Favicon -->
+  <link rel="icon" href="assets/favicon.ico" type="image/x-icon">
+  <link rel="shortcut icon" href="assets/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="assets/favicon-16x16.png" sizes="16x16" type="image/png">
+  <link rel="icon" href="assets/favicon-32x32.png" sizes="32x32" type="image/png">
+  <link rel="icon" href="assets/favicon-64x64.png" sizes="64x64" type="image/png">
+  <link rel="icon" href="assets/favicon-128x128.png" sizes="128x128" type="image/png">
+
+  <!-- Font Awesome CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css " 
+        integrity="sha512-..." 
+        crossorigin="anonymous" />
+
   <link rel="stylesheet" href="style.css" />
 </head>
-<body>
-  <h1>Предложить свой курс</h1>
-  <p>Заполните форму ниже, чтобы стать преподавателем на SkillUp.</p>
-  <form action="#" method="POST">
-    <label>Имя:<br><input type="text" name="name" required></label><br><br>
-    <label>Email:<br><input type="email" name="email" required></label><br><br>
-    <label>Описание курса:<br><textarea name="description" rows="5" required></textarea></label><br><br>
-    <button type="submit">Отправить</button>
-  </form>
-  <br>
-  <a href="index.html">← Назад на главную</a>
+<body class="dark-theme"> <!-- Темная тема по умолчанию -->
+
+  <!-- Шапка сайта -->
+  <header class="header">
+    <div class="container">
+      <h1 class="logo">SkillUp</h1>
+      <nav class="nav">
+        <a href="index.html#courses">Курсы</a>
+        <a href="about.html">О нас</a>
+        <a href="index.html#payment">Оплата</a>
+        <a href="support.html">Поддержка</a>
+        <a href="profile.html">Профиль</a>
+      </nav>
+      
+      <!-- Переключатель темы -->
+      <button id="theme-toggle" class="theme-button" title="Переключить тему">
+        <i class="fas fa-moon" id="theme-icon"></i>
+      </button>
+    </div>
+  </header>
+
+  <!-- Секция "Предложить курс" -->
+  <section class="suggest-course">
+    <div class="container">
+      <h2>Предложить свой курс</h2>
+      <p>Заполните форму ниже, чтобы стать преподавателем на SkillUp.</p>
+
+      <form action="#" method="POST" class="profile-form">
+        <div class="profile-grid">
+          <div>
+            <label class="profile-label">
+              <i class="fa-solid fa-user profile-label-icon"></i>
+              Имя
+            </label>
+            <input type="text" name="name" required />
+          </div>
+
+          <div>
+            <label class="profile-label">
+              <i class="fa-regular fa-envelope profile-label-icon"></i>
+              Email
+            </label>
+            <input type="email" name="email" required />
+          </div>
+
+          <div>
+            <label class="profile-label">
+              <i class="fa-solid fa-book profile-label-icon"></i>
+              Описание курса
+            </label>
+            <textarea name="description" rows="5" required></textarea>
+          </div>
+        </div>
+
+        <div class="buttons">
+          <button type="submit" class="btn">Отправить</button>
+        </div>
+      </form>
+
+      <div class="back-link">
+        <a href="index.html">← Назад на главную</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Футер -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-columns">
+        <div class="footer-section">
+          <h4>Контакты организаторов</h4>
+          <p>
+            <i class="fa-regular fa-envelope"></i>
+            <a href="mailto:skillupruu@gmail.com" target="_blank" rel="noopener noreferrer">
+              skillupruu@gmail.com
+            </a>
+          </p>
+          <p>
+            <i class="fa-brands fa-telegram"></i>
+            <a href="https://t.me/skillup_supports " target="_blank">@skillup_supports</a>
+          </p>
+        </div>
+        <div class="footer-section">
+          <h4>Информация о проекте</h4>
+          <p>© SkillUp 2025. Все права защищены.</p>
+          <p><a href="privacy-policy.html">Политика конфиденциальности</a></p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- JS -->
+  <script src="script.js"></script>
+  <!-- JS для темы -->
+  <script src="theme-toggle.js"></script>
 </body>
 </html>
