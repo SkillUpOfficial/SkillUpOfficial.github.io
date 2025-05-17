@@ -14,39 +14,53 @@
   <link rel="icon" href="assets/favicon-128x128.png" sizes="128x128" type="image/png">
 
   <!-- Font Awesome CDN -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css   " 
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css "
         integrity="sha512-..." 
         crossorigin="anonymous" />
 
   <link rel="stylesheet" href="style.css" />
 
+  <!-- Подключение Matter.js -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/matter-js/0.19.0/matter.min.js "></script>
+
   <!-- Yandex.RTB loader -->
   <script>window.yaContextCb=window.yaContextCb||[]</script>
-  <script src="https://yandex.ru/ads/system/context.js   " async></script>
+  <script src="https://yandex.ru/ads/system/context.js " async></script>
 </head>
 <body>
+
+<!-- Область с питоном -->
+<div id="snake-container" style="
+  position: absolute;
+  top: 50px;
+  right: 50px;
+  width: 300px;
+  height: 300px;
+  overflow: hidden;
+  z-index: 999;
+  pointer-events: auto;"></div>
 
 <!-- Шапка сайта -->
 <header class="header">
   <div class="container">
     <h1 class="logo">SkillUp</h1>
-   <nav class="nav">
-  <a href="#index">
-    <i class="fa-solid fa-book"></i> Курсы
-  </a>
-  <a href="/about" class="button about-button">
-    <i class="fa-solid fa-info-circle"></i> О нас
-  </a>
-  <a href="payment-page.html">
-    <i class="fa-solid fa-wallet"></i> Оплата
-  </a>
-  <a href="support.html">
-    <i class="fa-solid fa-headset"></i> Поддержка
-  </a>
-  <a href="profile.html">
-    <i class="fa-solid fa-user"></i> Профиль
-  </a>
-</nav>
+    <nav class="nav">
+      <a href="#index">
+        <i class="fa-solid fa-book"></i> Курсы
+      </a>
+      <a href="/about" class="button about-button">
+        <i class="fa-solid fa-info-circle"></i> О нас
+      </a>
+      <a href="payment-page.html">
+        <i class="fa-solid fa-wallet"></i> Оплата
+      </a>
+      <a href="support.html">
+        <i class="fa-solid fa-headset"></i> Поддержка
+      </a>
+      <a href="profile.html">
+        <i class="fa-solid fa-user"></i> Профиль
+      </a>
+    </nav>
   </div>
 </header>
 
@@ -172,17 +186,13 @@ window.yaContextCb.push(() => {
         <h4>Контакты организаторов</h4>
         <p>
           <i class="fa-regular fa-envelope"></i>
-          <a href="mailto:skillupruu@gmail.com" 
-             target="_blank" 
-             rel="noopener noreferrer">
+          <a href="mailto:skillupruu@gmail.com" target="_blank" rel="noopener noreferrer">
             skillupruu@gmail.com
           </a>
         </p>
         <p>
           <i class="fa-brands fa-telegram"></i>
-          <a href="https://t.me/skillup_supports   " 
-             target="_blank" 
-             rel="noopener noreferrer">@skillup_supports</a>
+          <a href="https://t.me/skillup_supports " target="_blank">@skillup_supports</a>
         </p>
       </div>
       <div class="footer-section">
@@ -193,9 +203,7 @@ window.yaContextCb.push(() => {
       <div class="footer-section">
         <h4>Предложить свой курс</h4>
         <p>Если вы преподаватель или эксперт — напишите нам:
-          <a href="mailto:skillupruu@gmail.com" 
-             target="_blank" 
-             rel="noopener noreferrer">
+          <a href="mailto:skillupruu@gmail.com" target="_blank" rel="noopener noreferrer">
             skillupruu@gmail.com
           </a>
         </p>
@@ -206,5 +214,87 @@ window.yaContextCb.push(() => {
 
 <!-- JS -->
 <script src="script.js"></script>
+
+<!-- Скрипт для питона -->
+<script>
+// Инициализация Matter.js
+const { Engine, Render, Runner, Bodies, Composite, Body } = Matter;
+
+const engine = Engine.create();
+const world = engine.world;
+
+const render = Render.create({
+  element: document.getElementById('snake-container'),
+  engine: engine,
+  options: {
+    width: 300,
+    height: 300,
+    wireframes: false,
+    background: 'transparent'
+  }
+});
+
+Engine.run(engine);
+Render.run(render);
+
+// Создание питона
+const snake = Bodies.circle(150, 150, 10, {
+  restitution: 0.8,
+  render: { fillStyle: '#6C47FF' }
+});
+Composite.add(world, snake);
+
+// Создание границ
+const boundaries = [
+  Bodies.rectangle(150, 0, 300, 40, { isStatic: true }),     // Верх
+  Bodies.rectangle(150, 300, 300, 40, { isStatic: true }),   // Низ
+  Bodies.rectangle(0, 150, 40, 300, { isStatic: true }),    // Лево
+  Bodies.rectangle(300, 150, 40, 300, { isStatic: true })   // Право
+];
+Composite.add(world, boundaries);
+
+// Перемещение питона
+let isDragging = false;
+let mouse = { x: 150, y: 150 };
+
+document.addEventListener('mousedown', e => {
+  isDragging = true;
+  const rect = render.canvas.getBoundingClientRect();
+  mouse.x = e.clientX - rect.left;
+  mouse.y = e.clientY - rect.top;
+});
+
+document.addEventListener('mousemove', e => {
+  if (isDragging) {
+    const rect = render.canvas.getBoundingClientRect();
+    mouse.x = e.clientX - rect.left;
+    mouse.y = e.clientY - rect.top;
+    Body.setPosition(snake, mouse);
+  }
+});
+
+document.addEventListener('mouseup', () => isDragging = false);
+
+document.addEventListener('touchstart', e => {
+  const touch = e.touches[0];
+  const rect = render.canvas.getBoundingClientRect();
+  mouse.x = touch.clientX - rect.left;
+  mouse.y = touch.clientY - rect.top;
+  isDragging = true;
+});
+
+document.addEventListener('touchmove', e => {
+  if (isDragging) {
+    const touch = e.touches[0];
+    const rect = render.canvas.getBoundingClientRect();
+    mouse.x = touch.clientX - rect.left;
+    mouse.y = touch.clientY - rect.top;
+    Body.setPosition(snake, mouse);
+  }
+});
+
+document.addEventListener('touchend', () => isDragging = false);
+</script>
+
 </body>
 </html>
