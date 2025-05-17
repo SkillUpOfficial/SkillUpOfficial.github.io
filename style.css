@@ -599,8 +599,13 @@ h1, h2, h3, h4 {
 }
 
 #snake-container {
-  background-color: transparent;
-  border: 1px solid rgba(255, 255, 255, 0.2); /* Невидимые границы */
+  position: absolute;
+  top: 50px; /* Отступ сверху */
+  right: 50px; /* Отступ справа */
+  width: 300px;
+  height: 300px;
+  overflow: hidden;
+  z-index: 999;
 }
 
 .snake-body {
