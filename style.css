@@ -448,21 +448,3 @@ section h2 {
     padding-top: 15px;
   }
 }
-
-/* Стили для всех устройств */
-.menu {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    overflow-x: auto; /* Включаем горизонтальный скролл */
-    -webkit-overflow-scrolling: touch; /* Для плавного скроллинга на мобильных устройствах */
-}
-
-.button {
-    display: inline-block;
-    padding: 10px 20px;
-    font-size: 16px;
-    white-space: nowrap; /* Запрещаем перенос текста */
-    overflow: hidden;
-    text-overflow: ellipsis; /* Добавляем многоточие при необходимости */
-}
