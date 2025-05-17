@@ -397,3 +397,54 @@ section h2 {
     padding: 0 10px;
   }
 }
+
+/* === Адаптация под мобильные устройства (до 768px) === */
+@media (max-width: 768px) {
+  .container {
+    padding: 0 15px;
+  }
+
+  .nav {
+    display: none;
+    flex-direction: column;
+    background-color: #222;
+    padding: 10px 0;
+  }
+
+  .nav.active {
+    display: flex;
+  }
+
+  .nav a {
+    padding: 10px;
+    text-align: center;
+    font-size: 16px;
+    border-bottom: 1px solid #444;
+  }
+
+  .menu-toggle {
+    display: block;
+    color: white;
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+  }
+
+  h2 {
+    font-size: 24px;
+  }
+
+  ul {
+    padding-left: 20px;
+  }
+
+  .footer-columns {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .footer-section {
+    padding-top: 15px;
+  }
+}
