@@ -111,18 +111,7 @@ h1, h2, h3, h4 {
 .course h3 {
   color: #FFA500;
 }
-/* === Карточка курса или тарифа === */
-.card,
-.course {
-  display: flex;
-  flex-direction: column;
-  height: 100%; /* Важно для правильной работы flex */
-}
 
-/* === Кнопка "Подробнее" === */
-.btn-details {
-  align-self: center; /* Центрирует по горизонтали */
-  width: fit-content;
 }
 /* Кнопки "Подробнее" */
 .btn-details {
