@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0">
+  <channel>
+    <title>Блог SkillUp</title>
+    <link>https://skillupofficial.github.io/ </link>
+    <description>Полезные статьи о маркетинге, Python и UX/UI дизайне от SkillUp.</description>
+    <language>ru</language>
+    <pubDate>Sat, 17 May 2025 12:00:00 +0300</pubDate>
+    <lastBuildDate>Sat, 17 May 2025 12:00:00 +0300</lastBuildDate>
+    <webMaster>admin@skillupofficial.github.io</webMaster>
+    <generator>SkillUp RSS Generator</generator>
+
+    <!-- Статья 1 -->
+    <item>
+      <title>Как начать изучать Python в 2025 году</title>
+      <link>https://skillupofficial.github.io/courses/python-course </link>
+      <description>Современное руководство по изучению Python для новичков. Лучшие практики, инструменты и ресурсы 2025 года.</description>
+      <pubDate>Fri, 16 May 2025 10:30:00 +0300</pubDate>
+      <guid>https://skillupofficial.github.io/courses/python-course </guid>
+    </item>
+
+    <!-- Статья 2 -->
+    <item>
+      <title>UX/UI дизайн в эпоху ИИ: тренды 2025</title>
+      <link>https://skillupofficial.github.io/courses/ui-design </link>
+      <description>Как искусственный интеллект влияет на профессию дизайнера. Какие навыки будут востребованы в ближайшие годы.</description>
+      <pubDate>Thu, 15 May 2025 14:45:00 +0300</pubDate>
+      <guid>https://skillupofficial.github.io/courses/ui-design </guid>
+    </item>
+
+    <!-- Статья 3 -->
+    <item>
+      <title>Маркетинг с AI-инструментами: новые возможности</title>
+      <link>https://skillupofficial.github.io/courses/marketing-ai </link>
+      <description>Как использовать искусственный интеллект в маркетинге. Практические примеры и кейсы 2025 года.</description>
+      <pubDate>Tue, 13 May 2025 09:15:00 +0300</pubDate>
+      <guid>https://skillupofficial.github.io/courses/marketing-ai </guid>
+    </item>
+
+    <!-- Статья 4 -->
+    <item>
+      <title>Веб-разработка в 2025: что важно знать</title>
+      <link>https://skillupofficial.github.io/courses/web-development </link>
+      <description>Актуальные технологии, фреймворки и подходы к разработке сайтов в 2025 году. Советы от экспертов.</description>
+      <pubDate>Sun, 11 May 2025 18:00:00 +0300</pubDate>
+      <guid>https://skillupofficial.github.io/courses/web-development </guid>
+    </item>
+
+  </channel>
+</rss>
