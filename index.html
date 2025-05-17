@@ -5,19 +5,23 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>SkillUp — Курсы для развития</title>
 
-<!-- Favicon -->
-<link rel="icon" href="assets/favicon.ico" type="image/x-icon">
-<link rel="shortcut icon" href="assets/favicon.ico" type="image/x-icon">
-<link rel="icon" href="assets/favicon-16x16.png" sizes="16x16" type="image/png">
-<link rel="icon" href="assets/favicon-32x32.png" sizes="32x32" type="image/png">
-<link rel="icon" href="assets/favicon-64x64.png" sizes="64x64" type="image/png">
-<link rel="icon" href="assets/favicon-128x128.png" sizes="128x128" type="image/png">
-  
+  <!-- Favicon -->
+  <link rel="icon" href="assets/favicon.ico" type="image/x-icon">
+  <link rel="shortcut icon" href="assets/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="assets/favicon-16x16.png" sizes="16x16" type="image/png">
+  <link rel="icon" href="assets/favicon-32x32.png" sizes="32x32" type="image/png">
+  <link rel="icon" href="assets/favicon-64x64.png" sizes="64x64" type="image/png">
+  <link rel="icon" href="assets/favicon-128x128.png" sizes="128x128" type="image/png">
+
   <link rel="stylesheet" href="style.css" />
+
+  <!-- Yandex.RTB loader -->
+  <script>window.yaContextCb=window.yaContextCb||[]</script>
+  <script src="https://yandex.ru/ads/system/context.js" async></script>
 </head>
 <body>
 
-  <!-- Шапка сайта -->
+<!-- Шапка сайта -->
 <header class="header">
   <div class="container">
     <h1 class="logo">SkillUp</h1>
@@ -31,15 +35,15 @@
   </div>
 </header>
 
-  <!-- Главная секция -->
-  <section class="hero">
-    <div class="container">
-      <h2>Обучайтесь новым навыкам легко!</h2>
-      <p>SkillUp — это платформа, которая помогает начинающим освоить актуальные профессии и развить профессиональные навыки. Мы предлагаем качественные онлайн-курсы с практическими заданиями, поддержкой преподавателей и сертификатами по окончании.</p>
-    </div>
-  </section>
+<!-- Главная секция -->
+<section class="hero">
+  <div class="container">
+    <h2>Обучайтесь новым навыкам легко!</h2>
+    <p>SkillUp — это платформа, которая помогает начинающим освоить актуальные профессии и развить профессиональные навыки. Мы предлагаем качественные онлайн-курсы с практическими заданиями, поддержкой преподавателей и сертификатами по окончании.</p>
+  </div>
+</section>
 
-  <!-- Популярные курсы -->
+<!-- Популярные курсы -->
 <section id="courses" class="courses">
   <div class="container">
     <h2>Популярные курсы</h2>
@@ -48,7 +52,7 @@
         <h3>Маркетинг для начинающих</h3>
         <p>Курс для тех, кто хочет понять основы маркетинга. Продолжительность: 1 неделя. Уровень: Базовый.</p>
         <a href="#" class="btn-details">Подробнее</a>
-    </div>
+      </div>
       <div class="course">
         <h3>Продвинутый Python</h3>
         <p>Углубленное изучение языка Python. Продолжительность: 2 недели. Уровень: Средний.</p>
@@ -63,7 +67,7 @@
   </div>
 </section>
 
-  <!-- Тарифы -->
+<!-- Тарифы -->
 <section id="payment" class="pricing">
   <div class="container">
     <h2>Тарифы</h2>
@@ -107,34 +111,43 @@
   </div>
 </section>
 
-   
-
-  <!-- Отзывы -->
-  <section class="reviews">
-    <div class="container">
-      <h2>Отзывы</h2>
-      <div class="review-list">
-        <div class="review">
-          <p><strong>Анна, Тула:</strong> Отличный курс по маркетингу! Всё понятно и по делу. Наконец-то начала понимать, как работает эта сфера.</p>
-        </div>
-        <div class="review">
-          <p><strong>Иван, Санкт-Петербург:</strong> Занятия по Python дали мне возможность перейти на новую должность. Рекомендую!</p>
-        </div>
-        <div class="review">
-          <p><strong>Катя, Екатеринбург:</strong> Удобный формат обучения. Даже с работой успеваю учиться. Получила ценный опыт.</p>
-        </div>
+<!-- Отзывы -->
+<section class="reviews">
+  <div class="container">
+    <h2>Отзывы</h2>
+    <div class="review-list">
+      <div class="review">
+        <p><strong>Анна, Тула:</strong> Отличный курс по маркетингу! Всё понятно и по делу. Наконец-то начала понимать, как работает эта сфера.</p>
+      </div>
+      <div class="review">
+        <p><strong>Иван, Санкт-Петербург:</strong> Занятия по Python дали мне возможность перейти на новую должность. Рекомендую!</p>
+      </div>
+      <div class="review">
+        <p><strong>Катя, Екатеринбург:</strong> Удобный формат обучения. Даже с работой успеваю учиться. Получила ценный опыт.</p>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- Предложить курс -->
-  <section id="suggest-course" class="suggest-course">
-    <div class="container">
-      <h2>Хочешь предложить свой курс?</h2>
-      <p>Если вы преподаватель или эксперт — напишите нам и мы рассмотрим ваше предложение.</p>
-      <a href="suggest-course.html" class="btn">Предложить курс</a>
-    </div>
-  </section>
+<!-- Предложить курс -->
+<section id="suggest-course" class="suggest-course">
+  <div class="container">
+    <h2>Хочешь предложить свой курс?</h2>
+    <p>Если вы преподаватель или эксперт — напишите нам и мы рассмотрим ваше предложение.</p>
+    <a href="suggest-course.html" class="btn">Предложить курс</a>
+  </div>
+</section>
+
+<!-- Yandex.RTB R-A-15521888-1 -->
+<div id="yandex_rtb_R-A-15521888-1"></div>
+<script>
+window.yaContextCb.push(() => {
+    Ya.Context.AdvManager.render({
+        "blockId": "R-A-15521888-1",
+        "renderTo": "yandex_rtb_R-A-15521888-1"
+    })
+})
+</script>
 
 <!-- Футер -->
 <footer class="footer">
@@ -142,14 +155,14 @@
     <div class="footer-columns">
       <div class="footer-section">
         <h4>Контакты организаторов</h4>
-         <p>Email: 
+        <p>Email: 
           <a href="https://mail.google.com/mail/?view=cm&fs=1&to=skillupruu@gmail.com" 
              target="_blank" 
              rel="noopener noreferrer">
             skillupruu@gmail.com
           </a>
         </p>
-        <p>Telegram: <a href="https://t.me/skillup_supports ">@skillup_supports</a></p>
+        <p>Telegram: <a href="https://t.me/skillup_supports">@skillup_supports</a></p>
       </div>
       <div class="footer-section">
         <h4>Информация о проекте</h4>
@@ -158,7 +171,7 @@
       </div>
       <div class="footer-section">
         <h4>Предложить свой курс</h4>
-         <p>Если вы преподаватель или эксперт — напишите нам:
+        <p>Если вы преподаватель или эксперт — напишите нам:
           <a href="https://mail.google.com/mail/?view=cm&fs=1&to=skillupruu@gmail.com" 
              target="_blank" 
              rel="noopener noreferrer">
@@ -170,7 +183,7 @@
   </div>
 </footer>
 
-  <!-- JS -->
-  <script src="script.js"></script>
+<!-- JS -->
+<script src="script.js"></script>
 </body>
 </html>
