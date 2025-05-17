@@ -5,14 +5,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Поддержка</title>
 
-<!-- Favicon -->
-<link rel="icon" href="assets/favicon.ico" type="image/x-icon">
-<link rel="shortcut icon" href="assets/favicon.ico" type="image/x-icon">
-<link rel="icon" href="assets/favicon-16x16.png" sizes="16x16" type="image/png">
-<link rel="icon" href="assets/favicon-32x32.png" sizes="32x32" type="image/png">
-<link rel="icon" href="assets/favicon-64x64.png" sizes="64x64" type="image/png">
-<link rel="icon" href="assets/favicon-128x128.png" sizes="128x128" type="image/png">
-  
+  <!-- Favicon -->
+  <link rel="icon" href="assets/favicon.ico" type="image/x-icon">
+  <link rel="shortcut icon" href="assets/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="assets/favicon-16x16.png" sizes="16x16" type="image/png">
+  <link rel="icon" href="assets/favicon-32x32.png" sizes="32x32" type="image/png">
+  <link rel="icon" href="assets/favicon-64x64.png" sizes="64x64" type="image/png">
+  <link rel="icon" href="assets/favicon-128x128.png" sizes="128x128" type="image/png">
+
+  <!-- Font Awesome CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css " 
+        integrity="sha512-..." 
+        crossorigin="anonymous" />
+
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
@@ -32,42 +37,75 @@
   </header>
 
   <!-- Поддержка -->
-  <section class="hero">
+  <section class="support-section">
     <div class="container">
-      <h2>Свяжитесь с нами</h2>
-      <p>Если у вас возникли вопросы или вам нужна помощь — вы можете связаться с нашей командой следующими способами:</p>
-      <ul>
-        <li>📧 Email: <a href="mailto:support@skillup.ru">support@skillup.ru</a></li>
-        <li>💬 Telegram: <a href="https://t.me/skillup_support ">Telegram</a></li>
-        <li>📞 Телефон: (пока отсутствует)</li>
-      </ul>
-      <p>Мы всегда рады помочь!</p>
+      <h2 class="section-title">Свяжитесь с нами</h2>
+      <p class="section-subtitle">Если у вас возникли вопросы или вам нужна помощь — вы можете связаться с нашей командой следующими способами:</p>
+      
+      <div class="contact-cards">
+        <!-- Email -->
+        <div class="contact-card">
+          <div class="contact-icon">
+            <i class="fa-regular fa-envelope"></i>
+          </div>
+          <h3>Email</h3>
+          <p>Пишите нам в любое время</p>
+          <a href="mailto:support@skillup.ru" class="contact-link">support@skillup.ru</a>
+        </div>
+        
+        <!-- Telegram -->
+        <div class="contact-card">
+          <div class="contact-icon">
+            <i class="fa-brands fa-telegram"></i>
+          </div>
+          <h3>Telegram</h3>
+          <p>Онлайн-чат с поддержкой</p>
+          <a href="https://t.me/skillup_support " target="_blank" class="contact-link">@skillup_support</a>
+        </div>
+        
+        <!-- Телефон -->
+        <div class="contact-card">
+          <div class="contact-icon">
+            <i class="fa-solid fa-mobile"></i>
+          </div>
+          <h3>Телефон</h3>
+          <p>Работаем над подключением</p>
+          <span class="contact-disabled">Пока недоступно</span>
+        </div>
+      </div>
+      
+      <div class="closing-message">
+        <p>Мы всегда рады помочь! Обычно отвечаем в течение 24 часов</p>
+      </div>
     </div>
   </section>
 
-<!-- Футер -->
-<footer class="footer">
-  <div class="container">
-    <div class="footer-columns">
-      <div class="footer-section">
-        <h4>Контакты организаторов</h4>
-        <p>Email: 
-          <a href="https://mail.google.com/mail/?view=cm&fs=1&to=skillupruu @gmail.com" 
-             target="_blank" 
-             rel="noopener noreferrer">
-            skillupruu@gmail.com
-          </a>
-        </p>
-        <p>Telegram: <a href="https://t.me/skillup_supports " target="_blank">@skillup_supports</a></p>
-      </div>
-      <div class="footer-section">
-        <h4>Информация о проекте</h4>
-        <p>© SkillUp 2025. Все права защищены.</p>
-        <p><a href="privacy-policy.html">Политика конфиденциальности</a></p>
+  <!-- Футер -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-columns">
+        <div class="footer-section">
+          <h4>Контакты организаторов</h4>
+          <p>
+            <i class="fa-regular fa-envelope"></i> 
+            <a href="mailto:skillupruu@gmail.com" target="_blank" rel="noopener noreferrer">
+              skillupruu@gmail.com
+            </a>
+          </p>
+          <p>
+            <i class="fa-brands fa-telegram"></i> 
+            <a href="https://t.me/skillup_supports " target="_blank">@skillup_supports</a>
+          </p>
+        </div>
+        <div class="footer-section">
+          <h4>Информация о проекте</h4>
+          <p>© SkillUp 2025. Все права защищены.</p>
+          <p><a href="privacy-policy.html">Политика конфиденциальности</a></p>
+        </div>
       </div>
     </div>
-  </div>
-</footer>
+  </footer>
+
   <!-- JS -->
   <script src="script.js"></script>
 </body>
