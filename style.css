@@ -48,6 +48,7 @@ h1, h2, h3, h4 {
   font-weight: bold;
 }
 
+/* Меню навигации */
 .nav {
   display: flex;
   gap: 20px;
@@ -55,6 +56,17 @@ h1, h2, h3, h4 {
   flex-wrap: nowrap;
   overflow-x: auto;
   -webkit-overflow-scrolling: touch;
+  scrollbar-width: thin;
+  scrollbar-color: #6C47FF #222;
+}
+
+.nav::-webkit-scrollbar {
+  height: 6px;
+}
+
+.nav::-webkit-scrollbar-thumb {
+  background: #6C47FF;
+  border-radius: 4px;
 }
 
 .nav a {
@@ -79,10 +91,33 @@ h1, h2, h3, h4 {
   }
 }
 
+/* Анимация подсказки листания */
+.scroll-hint {
+  display: none;
+  font-size: 12px;
+  color: #999;
+  margin-top: -10px;
+  text-align: left;
+  opacity: 0.8;
+  animation: fadeMove 2s infinite;
+}
+
+@keyframes fadeMove {
+  0% { transform: translateX(0); opacity: 0.6; }
+  50% { transform: translateX(10px); opacity: 1; }
+  100% { transform: translateX(0); opacity: 0.6; }
+}
+
+@media (max-width: 768px) {
+  .scroll-hint {
+    display: block;
+  }
+}
+
 /* Главная секция */
 .hero {
   background-color: #1e1e1e;
-  padding: 60px 20px;
+  padding: 40px 20px;
   text-align: center;
   border-bottom: 1px solid #333;
 }
@@ -101,7 +136,7 @@ h1, h2, h3, h4 {
 
 /* Популярные курсы */
 .courses {
-  padding: 60px 20px;
+  padding: 40px 20px;
   background-color: #1e1e1e;
   text-align: center;
 }
@@ -154,7 +189,7 @@ h1, h2, h3, h4 {
 
 /* Тарифы */
 .pricing {
-  padding: 60px 20px;
+  padding: 40px 20px;
   background-color: #1e1e1e;
   text-align: center;
 }
@@ -241,7 +276,7 @@ h1, h2, h3, h4 {
 
 /* Отзывы */
 .reviews {
-  padding: 60px 20px;
+  padding: 40px 20px;
   background-color: #1e1e1e;
   text-align: center;
 }
@@ -266,7 +301,7 @@ h1, h2, h3, h4 {
 
 /* Предложить курс */
 .suggest-course {
-  padding: 60px 20px;
+  padding: 40px 20px;
   background-color: #1e1e1e;
   text-align: center;
 }
@@ -306,6 +341,7 @@ h1, h2, h3, h4 {
   padding-top: 15px;
 }
 
+/* Форма профиля */
 .profile-form {
   max-width: 600px;
   margin: 0 auto;
@@ -337,45 +373,4 @@ h1, h2, h3, h4 {
 
 .profile-form .btn {
   margin-top: 20px;
-}
-
-/* === Адаптация под мобильные устройства (до 768px) === */
-@media (max-width: 768px) {
-  .container {
-    padding: 0 15px;
-  }
-
-  .nav {
-    display: flex;
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
-    flex-direction: row;
-    background-color: transparent;
-    padding: 0;
-  }
-
-  .nav a {
-    padding: 10px 15px;
-    font-size: 14px;
-    min-width: 90px;
-    overflow: hidden;
-    text-overflow: ellipsis;
-  }
-
-  .nav .about-button {
-    min-width: 100px;
-  }
-
-  h2 {
-    font-size: 24px;
-  }
-
-  ul {
-    padding-left: 20px;
-  }
-
-  .footer-columns {
-    flex-direction: column;
-    gap: 20px;
-  }
 }
