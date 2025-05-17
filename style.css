@@ -116,13 +116,11 @@ h1, h2, h3, h4 {
 .course {
   display: flex;
   flex-direction: column;
-  justify-content: space-between; /* Распределяет контент по высоте */
   height: 100%; /* Важно для правильной работы flex */
 }
 
 /* === Кнопка "Подробнее" === */
 .btn-details {
-  margin-top: auto; /* Прижимает к нижнему краю */
   align-self: center; /* Центрирует по горизонтали */
   width: fit-content;
 }
