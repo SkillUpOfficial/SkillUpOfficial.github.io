@@ -51,7 +51,7 @@ h1, h2, h3, h4 {
 /* Меню навигации */
 .nav {
   display: flex;
-  gap: 20px;
+  gap: 10px; /* Уменьшено расстояние между кнопками */
   align-items: center;
   flex-wrap: nowrap;
   overflow-x: auto;
@@ -79,11 +79,16 @@ h1, h2, h3, h4 {
 }
 
 @media (max-width: 768px) {
+  .nav {
+    gap: 5px; /* Ещё меньше расстояния на мобильных */
+  }
+
   .nav a {
     font-size: 14px;
     min-width: 90px;
     overflow: hidden;
     text-overflow: ellipsis;
+    padding: 10px 10px; /* Уменьшен внутренний отступ */
   }
 
   .nav .about-button {
