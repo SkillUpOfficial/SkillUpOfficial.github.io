@@ -5,16 +5,28 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Профиль</title>
 
-<!-- Favicon -->
-<link rel="icon" href="assets/favicon.ico" type="image/x-icon">
-<link rel="shortcut icon" href="assets/favicon.ico" type="image/x-icon">
-<link rel="icon" href="assets/favicon-16x16.png" sizes="16x16" type="image/png">
-<link rel="icon" href="assets/favicon-32x32.png" sizes="32x32" type="image/png">
-<link rel="icon" href="assets/favicon-64x64.png" sizes="64x64" type="image/png">
-<link rel="icon" href="assets/favicon-128x128.png" sizes="128x128" type="image/png">
-  
+  <!-- Favicon -->
+  <link rel="icon" href="assets/favicon.ico" type="image/x-icon">
+  <link rel="shortcut icon" href="assets/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="assets/favicon-16x16.png" sizes="16x16" type="image/png">
+  <link rel="icon" href="assets/favicon-32x32.png" sizes="32x32" type="image/png">
+  <link rel="icon" href="assets/favicon-64x64.png" sizes="64x64" type="image/png">
+  <link rel="icon" href="assets/favicon-128x128.png" sizes="128x128" type="image/png">
+
+  <!-- Font Awesome CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css " 
+        integrity="sha512-..." 
+        crossorigin="anonymous" />
+
   <link rel="stylesheet" href="style.css" />
   <style>
+    /* Стили для иконок в профиле */
+    .profile-label-icon {
+      margin-right: 0.5rem;
+      color: #6C47FF;
+      font-size: 1.1rem;
+    }
+
     .profile-card {
       background-color: #1e1e1e;
       border-radius: 12px;
@@ -67,7 +79,7 @@
       border-radius: 4px;
       color: white;
       margin-top: 5px;
-      resize: none; /* Убирает возможность изменения размера */
+      resize: none;
     }
 
     .buttons {
@@ -130,29 +142,35 @@
     </div>
   </section>
 
- <!-- Футер -->
-<footer class="footer">
-  <div class="container">
-    <div class="footer-columns">
-      <div class="footer-section">
-        <h4>Контакты организаторов</h4>
-        <p>Email: 
-          <a href="https://mail.google.com/mail/?view=cm&fs=1&to=skillupruu @gmail.com" 
-             target="_blank" 
-             rel="noopener noreferrer">
-            skillupruu@gmail.com
-          </a>
-        </p>
-        <p>Telegram: <a href="https://t.me/skillup_supports " target="_blank">@skillup_supports</a></p>
-      </div>
-      <div class="footer-section">
-        <h4>Информация о проекте</h4>
-        <p>© SkillUp 2025. Все права защищены.</p>
-        <p><a href="privacy-policy.html">Политика конфиденциальности</a></p>
+  <!-- Футер -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-columns">
+        <div class="footer-section">
+          <h4>Контакты организаторов</h4>
+          <p>
+            <i class="fa-regular fa-envelope"></i>
+            <a href="mailto:skillupruu@gmail.com" 
+               target="_blank" 
+               rel="noopener noreferrer">
+              skillupruu@gmail.com
+            </a>
+          </p>
+          <p>
+            <i class="fa-brands fa-telegram"></i>
+            <a href="https://t.me/skillup_supports " 
+               target="_blank" 
+               rel="noopener noreferrer">@skillup_supports</a>
+          </p>
+        </div>
+        <div class="footer-section">
+          <h4>Информация о проекте</h4>
+          <p>© SkillUp 2025. Все права защищены.</p>
+          <p><a href="privacy-policy.html">Политика конфиденциальности</a></p>
+        </div>
       </div>
     </div>
-  </div>
-</footer>
+  </footer>
 
   <!-- JS -->
   <script src="script.js"></script>
@@ -180,22 +198,34 @@
 
         <div class="profile-grid">
           <div class="profile-field">
-            <span class="profile-label">Имя</span>
+            <span class="profile-label">
+              <i class="fa-solid fa-user profile-label-icon"></i>
+              Имя
+            </span>
             <span class="profile-value">${data.firstName}</span>
           </div>
 
           <div class="profile-field">
-            <span class="profile-label">Фамилия</span>
+            <span class="profile-label">
+              <i class="fa-solid fa-user profile-label-icon"></i>
+              Фамилия
+            </span>
             <span class="profile-value">${data.lastName}</span>
           </div>
 
           <div class="profile-field">
-            <span class="profile-label">Почта</span>
+            <span class="profile-label">
+              <i class="fa-solid fa-envelope profile-label-icon"></i>
+              Почта
+            </span>
             <span class="profile-value">${data.email}</span>
           </div>
 
           <div class="profile-field">
-            <span class="profile-label">Мои курсы</span>
+            <span class="profile-label">
+              <i class="fa-solid fa-book profile-label-icon"></i>
+              Мои курсы
+            </span>
             <ul class="profile-value" style="margin: 0; padding-left: 20px;">
               <li>Маркетинг для начинающих</li>
               <li>Продвинутый Python</li>
@@ -203,7 +233,10 @@
           </div>
 
           <div class="profile-field">
-            <span class="profile-label">История активности</span>
+            <span class="profile-label">
+              <i class="fa-solid fa-clock-rotate-left profile-label-icon"></i>
+              История активности
+            </span>
             <span class="profile-value">
               Последнее посещение: 10 апреля 2025 г.<br>
               Прогресс обучения: 65%
@@ -230,27 +263,42 @@
         <form id="profile-form">
           <div class="profile-grid">
             <div>
-              <label class="profile-label">Имя</label>
+              <label class="profile-label">
+                <i class="fa-solid fa-user profile-label-icon"></i>
+                Имя
+              </label>
               <input type="text" id="first-name" value="${data.firstName}" />
             </div>
 
             <div>
-              <label class="profile-label">Фамилия</label>
+              <label class="profile-label">
+                <i class="fa-solid fa-user profile-label-icon"></i>
+                Фамилия
+              </label>
               <input type="text" id="last-name" value="${data.lastName}" />
             </div>
 
             <div>
-              <label class="profile-label">Почта</label>
+              <label class="profile-label">
+                <i class="fa-solid fa-envelope profile-label-icon"></i>
+                Почта
+              </label>
               <input type="email" id="email" value="${data.email}" />
             </div>
 
             <div>
-              <label class="profile-label">Мои курсы</label>
+              <label class="profile-label">
+                <i class="fa-solid fa-book profile-label-icon"></i>
+                Мои курсы
+              </label>
               <textarea id="courses" rows="3" readonly>Маркетинг для начинающих\nПродвинутый Python</textarea>
             </div>
 
             <div>
-              <label class="profile-label">История активности</label>
+              <label class="profile-label">
+                <i class="fa-solid fa-clock-rotate-left profile-label-icon"></i>
+                История активности
+              </label>
               <textarea id="history" rows="3" readonly>Последнее посещение: 10 апреля 2025 г.\nПрогресс обучения: 65%</textarea>
             </div>
           </div>
