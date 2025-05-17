@@ -448,3 +448,9 @@ h1, h2, h3, h4 {
 .footer-section p {
   margin-bottom: 0.75rem;
 }
+
+.profile-label-icon {
+  margin-right: 0.5rem;
+  color: #6C47FF;
+  font-size: 1.1rem;
+}
