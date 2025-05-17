@@ -603,3 +603,63 @@ h1, h2, h3, h4 {
 .footer-section p {
   margin-bottom: 0.75rem;
 }
+
+/* === Темы === */
+body.dark-theme {
+  --bg-color: #1e1e1e;
+  --text-color: #f5f5f5;
+  --card-bg: #2c2c2c;
+  --accent-color: #6C47FF;
+  --icon-color: #e67e22;
+}
+
+body.light-theme {
+  --bg-color: #ffffff;
+  --text-color: #333;
+  --card-bg: #f9f9f9;
+  --accent-color: #3498db;
+  --icon-color: #f1c40f;
+}
+
+/* === Общие стили для тем === */
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  transition: background-color 0.3s, color 0.3s;
+}
+
+/* === Кнопка переключения темы === */
+.theme-button {
+  position: absolute;
+  right: 15px;
+  top: 15px;
+  background: none;
+  border: none;
+  font-size: 1.2rem;
+  cursor: pointer;
+  color: var(--icon-color);
+  transition: color 0.3s ease;
+}
+
+.theme-button:hover {
+  color: var(--accent-color);
+}
+
+/* === Карточки и элементы с поддержкой тем === */
+.contact-card, .profile-card, .faq-section, .price-card, .footer {
+  background: var(--card-bg);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.btn-pay, .edit-button, .save-button {
+  background-color: var(--accent-color);
+}
+
+/* === Цвета ссылок и иконок === */
+a {
+  color: var(--accent-color);
+}
+
+.footer-section p i, .profile-label-icon {
+  color: var(--icon-color);
+}
