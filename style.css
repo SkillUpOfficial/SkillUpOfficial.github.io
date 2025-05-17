@@ -450,10 +450,10 @@ section h2 {
 }
 
 @media (max-width: 768px) {
-    #about-button {
+    .about-button {
         white-space: nowrap;
         overflow: hidden;
         text-overflow: ellipsis;
-        font-size: 13px;
+        font-size: 12px;
     }
 }
