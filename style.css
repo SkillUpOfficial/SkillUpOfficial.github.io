@@ -602,3 +602,86 @@ h1, h2, h3, h4 {
 .payment-extended {
   background-color: #1e1e1e; /* Темно-серый фон */
 }
+
+/* Красивый контейнер для секции оплаты */
+.payment-section {
+  padding: 60px 20px;
+}
+
+.payment-wrapper {
+  max-width: 700px;
+  margin: 0 auto;
+  background-color: #2c2c2c; /* Темно-серая карточка */
+  border-radius: 12px;
+  padding: 30px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  text-align: center;
+  animation: fadeInUp 1s ease-out;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.payment-wrapper h2 {
+  font-size: 28px;
+  color: #ffffff;
+  margin-bottom: 20px;
+}
+
+.payment-wrapper p {
+  font-size: 16px;
+  color: #cccccc;
+  line-height: 1.6;
+  margin-bottom: 30px;
+}
+
+/* Кнопка оплаты — обновленный стиль */
+.btn-pay {
+  display: inline-block;
+  padding: 14px 28px;
+  background: linear-gradient(135deg, #6C47FF, #5a36d6);
+  color: white;
+  font-weight: bold;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(108, 71, 255, 0.3);
+  text-decoration: none;
+}
+
+.btn-pay:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 16px rgba(108, 71, 255, 0.5);
+  background: linear-gradient(135deg, #5a36d6, #6C47FF);
+}
+
+/* Информация после оплаты */
+.payment-info {
+  margin-top: 20px;
+  padding: 15px 20px;
+  background-color: #3a3a3a;
+  border-left: 4px solid #6C47FF;
+  border-radius: 8px;
+  color: #dddddd;
+  font-size: 15px;
+  line-height: 1.5;
+  text-align: center;
+  animation: fadeInUp 1s ease-out;
+}
+
+.payment-info a {
+  color: #6C47FF;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+.payment-info a:hover {
+  color: #5a36d6;
+}
