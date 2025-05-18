@@ -685,3 +685,8 @@ h1, h2, h3, h4 {
 .payment-info a:hover {
   color: #5a36d6;
 }
+
+.features ul {
+  list-style: none;
+  padding-left: 0;
+}
