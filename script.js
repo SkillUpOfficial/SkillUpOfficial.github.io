@@ -167,3 +167,23 @@ document.querySelectorAll('.nav a[href^="#"]').forEach(anchor => {
     });
 });
 ReactDOM.render(<App />, document.getElementById('root'));
+
+// Плавное появление карточек при скролле
+const cards = document.querySelectorAll('.contact-card');
+
+const observerOptions = {
+  threshold: 0.1
+};
+
+const observer = new IntersectionObserver((entries, observer) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+      observer.unobserve(entry.target); // Остановить наблюдение после появления
+    }
+  });
+}, observerOptions);
+
+cards.forEach(card => {
+  observer.observe(card);
+});
