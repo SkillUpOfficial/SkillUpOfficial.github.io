@@ -748,3 +748,8 @@ h1, h2, h3, h4 {
 .animate-on-scroll.visible {
   animation: fadeInUp 0.9s ease-out forwards;
 }
+
+.privacy-policy ul {
+  list-style: none;
+  padding-left: 0;
+}
