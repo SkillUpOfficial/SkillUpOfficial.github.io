@@ -753,3 +753,86 @@ h1, h2, h3, h4 {
   list-style: none;
   padding-left: 0;
 }
+
+/* === Политика конфиденциальности === */
+.privacy-policy ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+/* === Предложить курс === */
+.suggest-course {
+  padding: 60px 20px;
+  background-color: #1e1e1e;
+  text-align: center;
+}
+
+.profile-form {
+  max-width: 600px;
+  margin: 0 auto;
+  background: #2c2c2c;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  text-align: left;
+}
+
+.profile-form label {
+  display: block;
+  margin-bottom: 20px;
+  color: #f5f5f5;
+  font-weight: 500;
+}
+
+.profile-form input,
+.profile-form select,
+.profile-form textarea {
+  width: 100%;
+  padding: 12px;
+  background: #1e1e1e;
+  border: 1px solid #333;
+  border-radius: 6px;
+  color: #f5f5f5;
+  font-size: 15px;
+  resize: vertical;
+}
+
+.profile-form input:focus,
+.profile-form textarea:focus {
+  outline: none;
+  border-color: #6C47FF;
+  box-shadow: 0 0 0 3px rgba(108, 71, 255, 0.2);
+}
+
+.profile-form .btn {
+  margin-top: 20px;
+  display: inline-block;
+  padding: 12px 24px;
+  background-color: #6C47FF;
+  color: white;
+  border-radius: 6px;
+  font-weight: bold;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.profile-form .btn:hover {
+  background-color: #5a36d6;
+}
+
+.back-link {
+  display: inline-block;
+  margin-top: 20px;
+  color: #6C47FF;
+  font-size: 15px;
+  transition: color 0.3s ease;
+}
+
+.back-link i {
+  margin-right: 5px;
+  font-size: 14px;
+}
+
+.back-link:hover {
+  color: #fff;
+}
