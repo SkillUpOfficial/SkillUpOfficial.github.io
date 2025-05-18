@@ -68,7 +68,7 @@
       </label>
 
       <!-- reCAPTCHA -->
-      <div class="g-recaptcha" data-sitekey="6LcfJD8rAAAAAJNvtrdtjwdT8iGIgwq8lTZORhYs"></div>
+      <div class="g-recaptcha" data-sitekey="6LcfJD8rAAAAAJNvtrdtjwdT8iGIgwq8lTZORhYs" data-action="submit"></div>
 
       <!-- Кнопка -->
       <button type="submit" class="btn">Отправить заявку</button>
@@ -106,7 +106,7 @@
 </footer>
 
 <!-- reCAPTCHA API -->
-<script src="https://www.google.com/recaptcha/enterprise.js " async defer></script>
+<script src="https://www.google.com/recaptcha/enterprise.js?render=6LcfJD8rAAAAAJNvtrdtjwdT8iGIgwq8lTZORhYs " async defer></script>
 
 <!-- JS для отправки формы -->
 <script>
@@ -114,47 +114,42 @@
     event.preventDefault(); // Отменяем стандартную отправку
 
     const form = this;
-    const formData = new FormData(form);
 
-    // Получаем токен reCAPTCHA
-    const recaptchaResponse = grecaptcha.enterprise.getToken();
+    // Получаем токен reCAPTCHA v3
+    grecaptcha.enterprise.execute('6LcfJD8rAAAAAJNvtrdtjwdT8iGIgwq8lTZORhYs', { action: 'submit' }).then(token => {
+      // Добавляем токен как скрытое поле
+      const recaptchaInput = document.createElement('input');
+      recaptchaInput.setAttribute('type', 'hidden');
+      recaptchaInput.setAttribute('name', 'g-recaptcha-response');
+      recaptchaInput.setAttribute('value', token);
+      form.appendChild(recaptchaInput);
 
-    if (!recaptchaResponse) {
-      alert("Подтвердите, что вы не робот");
-      return;
-    }
+      // Конвертируем данные формы в строку
+      const formData = new FormData(form);
+      const body = new URLSearchParams(formData).toString();
 
-    // Конвертируем FormData в объект
-    const formObject = {};
-    formData.forEach((value, key) => formObject[key] = value);
-    
-    // Добавляем поле _captchaToken
-    formObject['g-recaptcha-response'] = recaptchaResponse;
-
-    // Преобразуем данные в строку
-    const body = Object.keys(formObject).map(key => 
-      encodeURIComponent(key) + '=' + encodeURIComponent(formObject[key])
-    ).join('&');
-
-    // Отправляем форму
-    fetch(form.action, {
-      method: "POST",
-      headers: {
-        'Content-Type': 'application/x-www-form-urlencoded',
-        'Accept': 'application/json'
-      },
-      body: body
-    })
-    .then(response => {
-      if (response.ok) {
-        form.style.display = "none";
-        document.getElementById("success-message").style.display = "block";
-      } else {
-        alert("Ошибка отправки формы. Попробуйте снова.");
-      }
-    })
-    .catch(error => {
-      alert("Произошла ошибка сети. Проверьте подключение.");
+      // Отправляем форму
+      fetch(form.action, {
+        method: "POST",
+        headers: {
+          'Content-Type': 'application/x-www-form-urlencoded',
+          'Accept': 'application/json'
+        },
+        body: body
+      })
+      .then(response => {
+        if (response.ok) {
+          form.style.display = "none";
+          document.getElementById("success-message").style.display = "block";
+        } else {
+          alert("Ошибка отправки формы. Попробуйте снова.");
+        }
+      })
+      .catch(error => {
+        alert("Произошла ошибка сети. Проверьте подключение.");
+      });
+    }).catch(() => {
+      alert("Не удалось получить токен reCAPTCHA");
     });
   });
 </script>
