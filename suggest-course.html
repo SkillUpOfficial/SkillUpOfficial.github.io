@@ -42,8 +42,13 @@
     <h2>Хочешь предложить свой курс?</h2>
     <p>Заполните форму ниже, чтобы стать преподавателем на SkillUp.</p>
 
+    <!-- Сообщение об успехе -->
+    <div id="success-message" class="success-message" style="display: none;">
+      <i class="fas fa-check-circle"></i> Спасибо за заявку! Мы свяжемся с вами в ближайшее время.
+    </div>
+
     <!-- Форма от Formspree -->
-    <form action="https://formspree.io/f/mblownjg " method="POST" class="profile-form">
+    <form id="suggest-form" action="https://formspree.io/f/mblownjg " method="POST" class="profile-form">
       <label>
         <i class="fa-solid fa-user profile-label-icon"></i>
         <span>Имя:</span><br>
@@ -62,6 +67,10 @@
         <textarea name="message" rows="6" required></textarea>
       </label>
 
+      <!-- reCAPTCHA -->
+      <div class="g-recaptcha" data-sitekey="6LcfJD8rAAAAAJNvtrdtjwdT8iGlgwq8ITZORhYs"></div>
+
+      <!-- Кнопка -->
       <button type="submit" class="btn">Отправить заявку</button>
     </form>
 
@@ -88,13 +97,51 @@
       </div>
       <div class="footer-section">
         <h4>Предложить курс</h4>
-        <p>Если вы преподаватель или эксперт — напишите нам:<br><a href="mailto:skillupruu@gmail.com" target="_blank">skillupruu@gmail.com</a></p>
+        <p>Если вы преподаватель или эксперт — напишите нам:<br>
+          <a href="mailto:skillupruu@gmail.com" target="_blank">skillupruu@gmail.com</a>
+        </p>
       </div>
     </div>
   </div>
 </footer>
 
-<!-- JS -->
-<script src="script.js"></script>
+<!-- reCAPTCHA API -->
+<script src="https://www.google.com/recaptcha/api.js " async defer></script>
+
+<!-- JS для скрытия формы после отправки -->
+<script>
+  document.getElementById("suggest-form").addEventListener("submit", function(event) {
+    event.preventDefault(); // Отменяем стандартное поведение
+
+    const form = this;
+    const formData = new FormData(form);
+
+    // Проверяем reCAPTCHA
+    const recaptchaResponse = grecaptcha.getResponse();
+    if (!recaptchaResponse) {
+      alert("Пожалуйста, подтвердите, что вы не робот");
+      return;
+    }
+
+    // Отправляем данные через fetch
+    fetch(form.getAttribute("action"), {
+      method: "POST",
+      body: formData,
+      headers: {
+        'Accept': 'application/json'
+      }
+    }).then(response => {
+      if (response.ok) {
+        form.style.display = "none";
+        document.getElementById("success-message").style.display = "block";
+      } else {
+        alert("Ошибка отправки формы. Попробуйте снова.");
+      }
+    }).catch(error => {
+      alert("Произошла ошибка сети. Проверьте соединение.");
+    });
+  });
+</script>
+
 </body>
 </html>
