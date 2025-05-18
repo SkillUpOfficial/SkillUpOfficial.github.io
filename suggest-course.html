@@ -19,6 +19,9 @@
         crossorigin="anonymous" />
 
   <link rel="stylesheet" href="style.css" />
+
+  <!-- reCAPTCHA JavaScript API -->
+  <script src="https://www.google.com/recaptcha/enterprise.js?render=6LcfJD8rAAAAAJNvtrdtjwdT8iGIgwq8lTZRhYs "></script>
 </head>
 <body>
 
@@ -42,11 +45,6 @@
     <h2>Хочешь предложить свой курс?</h2>
     <p>Заполните форму ниже, чтобы стать преподавателем на SkillUp.</p>
 
-    <!-- Сообщение об успехе -->
-    <div id="success-message" class="success-message" style="display: none;">
-      <i class="fas fa-check-circle"></i> Спасибо за заявку! Мы свяжемся с вами в ближайшее время.
-    </div>
-
     <!-- Форма от Formspree -->
     <form id="suggest-form" action="https://formspree.io/f/mblownjg " method="POST" class="profile-form">
       <label>
@@ -67,11 +65,13 @@
         <textarea name="message" rows="6" required></textarea>
       </label>
 
-      <!-- reCAPTCHA -->
-      <div class="g-recaptcha" data-sitekey="6LcfJD8rAAAAAJNvtrdtjwdT8iGIgwq8lTZORhYs"></div>
-
-      <!-- Кнопка -->
-      <button type="submit" class="btn">Отправить заявку</button>
+      <!-- Кнопка отправки с reCAPTCHA -->
+      <button class="g-recaptcha"
+              data-sitekey="6LcfJD8rAAAAAJNvtrdtjwdT8iGIgwq8lTZRhYs"
+              data-callback="onSubmit"
+              data-action="submit">
+        Отправить заявку
+      </button>
     </form>
 
     <!-- Ссылка Назад -->
@@ -105,44 +105,11 @@
   </div>
 </footer>
 
-<!-- reCAPTCHA API -->
-<script src="https://www.google.com/recaptcha/api.js " async defer></script>
-
-<!-- JS для скрытия формы после отправки -->
+<!-- JS для обработки reCAPTCHA -->
 <script>
-  document.getElementById("suggest-form").addEventListener("submit", function(event) {
-    event.preventDefault(); // Останавливаем стандартную отправку
-
-    const form = this;
-    const formData = new FormData(form);
-
-    // Проверяем reCAPTCHA
-    const recaptchaResponse = grecaptcha.getResponse();
-    if (!recaptchaResponse) {
-      alert("Пожалуйста, подтвердите, что вы не робот");
-      return;
-    }
-
-    // Отправляем форму
-    fetch(form.getAttribute("action"), {
-      method: "POST",
-      body: formData,
-      headers: {
-        'Accept': 'application/json'
-      }
-    })
-    .then(response => {
-      if (response.ok) {
-        form.style.display = "none";
-        document.getElementById("success-message").style.display = "block";
-      } else {
-        alert("Ошибка отправки формы. Попробуйте снова.");
-      }
-    })
-    .catch(error => {
-      alert("Произошла ошибка сети. Проверьте соединение.");
-    });
-  });
+  function onSubmit(token) {
+    document.getElementById("suggest-form").submit();
+  }
 </script>
 
 </body>
