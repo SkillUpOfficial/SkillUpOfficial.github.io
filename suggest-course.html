@@ -19,9 +19,6 @@
         crossorigin="anonymous" />
 
   <link rel="stylesheet" href="style.css" />
-
-  <!-- reCAPTCHA JavaScript API -->
-  <script src="https://www.google.com/recaptcha/enterprise.js?render=6LcfJD8rAAAAAJNvtrdtjwdT8iGIgwq8lTZRhYs "></script>
 </head>
 <body>
 
@@ -45,6 +42,11 @@
     <h2>Хочешь предложить свой курс?</h2>
     <p>Заполните форму ниже, чтобы стать преподавателем на SkillUp.</p>
 
+    <!-- Сообщение об успехе -->
+    <div id="success-message" class="success-message" style="display: none;">
+      <i class="fas fa-check-circle"></i> Спасибо за заявку! Мы свяжемся с вами в ближайшее время.
+    </div>
+
     <!-- Форма от Formspree -->
     <form id="suggest-form" action="https://formspree.io/f/mblownjg " method="POST" class="profile-form">
       <label>
@@ -65,13 +67,11 @@
         <textarea name="message" rows="6" required></textarea>
       </label>
 
-      <!-- Кнопка отправки с reCAPTCHA -->
-      <button class="g-recaptcha"
-              data-sitekey="6LcfJD8rAAAAAJNvtrdtjwdT8iGIgwq8lTZRhYs"
-              data-callback="onSubmit"
-              data-action="submit">
-        Отправить заявку
-      </button>
+      <!-- reCAPTCHA -->
+      <div class="g-recaptcha" data-sitekey="6LcfJD8rAAAAAJNvtrdtjwdT8iGIgwq8lTZORhYs"></div>
+
+      <!-- Кнопка -->
+      <button type="submit" class="btn">Отправить заявку</button>
     </form>
 
     <!-- Ссылка Назад -->
@@ -105,11 +105,58 @@
   </div>
 </footer>
 
-<!-- JS для обработки reCAPTCHA -->
+<!-- reCAPTCHA API -->
+<script src="https://www.google.com/recaptcha/enterprise.js " async defer></script>
+
+<!-- JS для отправки формы -->
 <script>
-  function onSubmit(token) {
-    document.getElementById("suggest-form").submit();
-  }
+  document.getElementById("suggest-form").addEventListener("submit", function(event) {
+    event.preventDefault(); // Отменяем стандартную отправку
+
+    const form = this;
+    const formData = new FormData(form);
+
+    // Получаем токен reCAPTCHA
+    const recaptchaResponse = grecaptcha.enterprise.getToken();
+
+    if (!recaptchaResponse) {
+      alert("Подтвердите, что вы не робот");
+      return;
+    }
+
+    // Конвертируем FormData в объект
+    const formObject = {};
+    formData.forEach((value, key) => formObject[key] = value);
+    
+    // Добавляем поле _captchaToken
+    formObject['g-recaptcha-response'] = recaptchaResponse;
+
+    // Преобразуем данные в строку
+    const body = Object.keys(formObject).map(key => 
+      encodeURIComponent(key) + '=' + encodeURIComponent(formObject[key])
+    ).join('&');
+
+    // Отправляем форму
+    fetch(form.action, {
+      method: "POST",
+      headers: {
+        'Content-Type': 'application/x-www-form-urlencoded',
+        'Accept': 'application/json'
+      },
+      body: body
+    })
+    .then(response => {
+      if (response.ok) {
+        form.style.display = "none";
+        document.getElementById("success-message").style.display = "block";
+      } else {
+        alert("Ошибка отправки формы. Попробуйте снова.");
+      }
+    })
+    .catch(error => {
+      alert("Произошла ошибка сети. Проверьте подключение.");
+    });
+  });
 </script>
 
 </body>
