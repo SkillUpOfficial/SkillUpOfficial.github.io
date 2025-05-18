@@ -691,30 +691,7 @@ h1, h2, h3, h4 {
   padding-left: 0;
 }
 
-/* Анимация появления с задержкой */
-.contact-card {
-  opacity: 0;
-  transform: translateY(40px);
-  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-}
-
-.contact-card:nth-child(1) {
-  animation-delay: 0.2s; /* Задержка для первой карточки */
-}
-
-.contact-card:nth-child(2) {
-  animation-delay: 0.4s; /* Задержка для второй карточки */
-}
-
-.contact-card:nth-child(3) {
-  animation-delay: 0.6s; /* Задержка для третьей карточки */
-}
-
-.contact-card.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
+/* Анимация появления */
 @keyframes fadeInUp {
   from {
     opacity: 0;
@@ -726,11 +703,17 @@ h1, h2, h3, h4 {
   }
 }
 
+/* Применяем к карточкам */
 .contact-card {
-  animation: fadeInUp 0.6s ease-out forwards;
+  opacity: 0;
+  transform: translateY(40px);
+  animation-name: fadeInUp;
+  animation-duration: 0.6s;
+  animation-timing-function: ease-out;
+  animation-fill-mode: forwards;
 }
 
-/* Задержка для разных карточек */
+/* Задержки для эффекта "одна за другой" */
 .contact-card:nth-child(1) {
   animation-delay: 0.2s;
 }
