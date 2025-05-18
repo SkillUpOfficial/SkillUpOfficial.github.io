@@ -597,3 +597,8 @@ h1, h2, h3, h4 {
 .nav a:hover i {
   color: #e67e22; /* Цвет иконки при наведении */
 }
+
+.payment-section,
+.payment-extended {
+  background-color: #1e1e1e; /* Темно-серый фон */
+}
