@@ -22,85 +22,79 @@
 </head>
 <body>
 
-  <!-- Шапка сайта -->
-  <header class="header">
-    <div class="container">
-      <h1 class="logo">SkillUp</h1>
-      <nav class="nav">
-        <a href="index.html"><i class="fa-solid fa-book"></i> Курсы</a>
-        <a href="/about"><i class="fa-solid fa-info-circle"></i> О нас</a>
-        <a href="payment-page.html"><i class="fa-solid fa-wallet"></i> Оплата</a>
-        <a href="support.html"><i class="fa-solid fa-headset"></i> Поддержка</a>
-        <a href="profile.html"><i class="fa-solid fa-user"></i> Профиль</a>
-      </nav>
-    </div>
-  </header>
+<!-- Шапка сайта -->
+<header class="header">
+  <div class="container">
+    <h1 class="logo">SkillUp</h1>
+    <nav class="nav">
+      <a href="index.html"><i class="fa-solid fa-book"></i> Курсы</a>
+      <a href="/about"><i class="fa-solid fa-info-circle"></i> О нас</a>
+      <a href="payment-page.html"><i class="fa-solid fa-wallet"></i> Оплата</a>
+      <a href="support.html"><i class="fa-solid fa-headset"></i> Поддержка</a>
+      <a href="profile.html"><i class="fa-solid fa-user"></i> Профиль</a>
+    </nav>
+  </div>
+</header>
 
-  <!-- Блок с формой -->
-  <section class="suggest-course">
-    <div class="container">
-      <h2>Хочешь предложить свой курс?</h2>
-      <p>Заполните форму ниже, чтобы стать преподавателем на SkillUp.</p>
+<!-- Блок с формой -->
+<section class="suggest-course">
+  <div class="container">
+    <h2>Хочешь предложить свой курс?</h2>
+    <p>Заполните форму ниже, чтобы стать преподавателем на SkillUp.</p>
 
-      <form action="#" method="POST" class="profile-form">
-        <label>
-          <i class="fa-solid fa-user profile-label-icon"></i>
-          <span>Имя:</span><br>
-          <input type="text" name="name" required>
-        </label>
+    <!-- Форма от Formspree -->
+    <form action="https://formspree.io/f/mblownjg " method="POST" class="profile-form">
+      <label>
+        <i class="fa-solid fa-user profile-label-icon"></i>
+        <span>Имя:</span><br>
+        <input type="text" name="name" required>
+      </label>
 
-        <label>
-          <i class="fa-solid fa-envelope profile-label-icon"></i>
-          <span>Email:</span><br>
-          <input type="email" name="email" required>
-        </label>
+      <label>
+        <i class="fa-solid fa-envelope profile-label-icon"></i>
+        <span>Email:</span><br>
+        <input type="email" name="email" required>
+      </label>
 
-        <label>
-          <i class="fa-solid fa-graduation-cap profile-label-icon"></i>
-          <span>Описание курса:</span><br>
-          <textarea name="description" rows="6" required></textarea>
-        </label>
+      <label>
+        <i class="fa-solid fa-graduation-cap profile-label-icon"></i>
+        <span>Описание курса:</span><br>
+        <textarea name="message" rows="6" required></textarea>
+      </label>
 
-        <button type="submit" class="btn">Отправить заявку</button>
-      </form>
+      <button type="submit" class="btn">Отправить заявку</button>
+    </form>
 
-      <a href="index.html" class="back-link">
-        <i class="fa-solid fa-arrow-left"></i> ← Назад на главную
-      </a>
-    </div>
-  </section>
+    <!-- Ссылка Назад -->
+    <a href="index.html" class="back-link">
+      <i class="fa-solid fa-arrow-left"></i> ← Назад на главную
+    </a>
+  </div>
+</section>
 
-  <!-- Футер -->
-  <footer class="footer">
-    <div class="container">
-      <div class="footer-columns">
-        <div class="footer-section">
-          <h4>Контакты организаторов</h4>
-          <p>
-            <i class="fa-regular fa-envelope"></i>
-            <a href="mailto:skillupruu@gmail.com" target="_blank">skillupruu@gmail.com</a>
-          </p>
-          <p>
-            <i class="fa-brands fa-telegram"></i>
-            <a href="https://t.me/skillup_supports " target="_blank">@skillup_supports</a>
-          </p>
-        </div>
-        <div class="footer-section">
-          <h4>Информация о проекте</h4>
-          <p>© SkillUp 2025. Все права защищены.</p>
-          <p><a href="privacy-policy.html">Политика конфиденциальности</a></p>
-        </div>
-        <div class="footer-section">
-          <h4>Предложить курс</h4>
-          <p>Если вы преподаватель или эксперт — напишите нам:<br>
-            <a href="mailto:skillupruu@gmail.com" target="_blank">skillupruu@gmail.com</a>
-          </p>
-        </div>
+<!-- Футер -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-columns">
+      <div class="footer-section">
+        <h4>Контакты организаторов</h4>
+        <p><i class="fa-regular fa-envelope"></i> <a href="mailto:skillupruu@gmail.com" target="_blank">skillupruu@gmail.com</a></p>
+        <p><i class="fa-brands fa-telegram"></i> <a href="https://t.me/skillup_supports " target="_blank">@skillup_supports</a></p>
+      </div>
+      <div class="footer-section">
+        <h4>Информация о проекте</h4>
+        <p>© SkillUp 2025. Все права защищены.</p>
+        <p><a href="privacy-policy.html">Политика конфиденциальности</a></p>
+      </div>
+      <div class="footer-section">
+        <h4>Предложить курс</h4>
+        <p>Если вы преподаватель или эксперт — напишите нам:<br><a href="mailto:skillupruu@gmail.com" target="_blank">skillupruu@gmail.com</a></p>
       </div>
     </div>
-  </footer>
+  </div>
+</footer>
 
-  <!-- JS -->
-  <script src="script.js"></script>
+<!-- JS -->
+<script src="script.js"></script>
 </body>
 </html>
