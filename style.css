@@ -742,9 +742,9 @@ h1, h2, h3, h4 {
 .animate-on-scroll {
   opacity: 0;
   transform: translateY(40px);
-  transition: all 0.6s ease-out;
+  transition: all 0.9s ease-out;
 }
 
 .animate-on-scroll.visible {
-  animation: fadeInUp 0.6s ease-out forwards;
+  animation: fadeInUp 0.9s ease-out forwards;
 }
