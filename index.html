@@ -1,131 +1,219 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>SkillUp</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>SkillUp — Курсы для развития</title>
+
+  <!-- Favicon -->
+  <link rel="icon" href="assets/favicon.ico" type="image/x-icon">
+  <link rel="shortcut icon" href="assets/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="assets/favicon-16x16.png" sizes="16x16" type="image/png">
+  <link rel="icon" href="assets/favicon-32x32.png" sizes="32x32" type="image/png">
+  <link rel="icon" href="assets/favicon-64x64.png" sizes="64x64" type="image/png">
+  <link rel="icon" href="assets/favicon-128x128.png" sizes="128x128" type="image/png">
+
+  <!-- Font Awesome CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css "
+        integrity="sha512-..." 
+        crossorigin="anonymous" />
+
+  <link rel="stylesheet" href="style.css" />
+
+  <!-- Yandex.RTB loader -->
+  <script>window.yaContextCb = window.yaContextCb || []</script>
+  <script src="https://yandex.ru/ads/system/context.js " async></script>
 </head>
 <body>
-  <header class="header">
-    <div class="header-container">
-      <div class="logo">SkillUp</div>
-      <div class="burger-menu">☰</div>
-      <nav class="nav">
-        <a href="index (6).html">Курсы</a>
-        <a href="about.html">О нас</a>
-        <a href="payment-page.html">Оплата</a>
-        <a href="support.html">Поддержка</a>
-        <a href="profile.html">Профиль</a>
-      </nav>
-    </div>
-  </header>
 
-  <section class="hero">
+<!-- Шапка сайта -->
+<header class="header">
+  <div class="container">
+    <h1 class="logo">SkillUp</h1>
+    <nav class="nav">
+      <a href="index"><i class="fa-solid fa-book"></i> Курсы</a>
+      <a href="/about" class="button about-button"><i class="fa-solid fa-info-circle"></i> О нас</a>
+      <a href="payment-page.html"><i class="fa-solid fa-wallet"></i> Оплата</a>
+      <a href="support.html"><i class="fa-solid fa-headset"></i> Поддержка</a>
+      <a href="profile.html"><i class="fa-solid fa-user"></i> Профиль</a>
+    </nav>
+  </div>
+</header>
+
+<!-- Главная секция -->
+<section class="hero">
+  <div class="container">
     <h2>Обучайтесь новым навыкам легко!</h2>
     <p>SkillUp — это платформа, которая помогает начинающим освоить актуальные профессии и развить профессиональные навыки. Мы предлагаем качественные онлайн-курсы с практическими заданиями, поддержкой преподавателей и сертификатами по окончании.</p>
-  </section>
+  </div>
+</section>
 
-  <section class="courses">
+<!-- Популярные курсы -->
+<section id="courses" class="courses">
+  <div class="container">
     <h2>Популярные курсы</h2>
     <div class="course-list">
-      <div class="course">
+      <div class="course animate-on-scroll">
         <h3>Маркетинг для начинающих</h3>
         <p>Курс для тех, кто хочет понять основы маркетинга. Продолжительность: 1 неделя. Уровень: Базовый.</p>
         <a href="#" class="btn-details">Подробнее</a>
       </div>
-      <div class="course">
+      <div class="course animate-on-scroll">
         <h3>Продвинутый Python</h3>
         <p>Углубленное изучение языка Python. Продолжительность: 2 недели. Уровень: Средний.</p>
         <a href="#" class="btn-details">Подробнее</a>
       </div>
-      <div class="course">
+      <div class="course animate-on-scroll">
         <h3>UX/UI дизайн с нуля</h3>
         <p>Создание удобных интерфейсов. Продолжительность: 3 недели. Уровень: Продвинутый.</p>
         <a href="#" class="btn-details">Подробнее</a>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <section class="pricing">
+<!-- Тарифы -->
+<section id="payment" class="pricing">
+  <div class="container">
     <h2>Тарифы</h2>
     <div class="price-cards">
-      <div class="card">
+      <div class="card animate-on-scroll">
         <h3>Базовый</h3>
-        <div class="price">150 ₽</div>
+        <p class="price">150 ₽</p>
         <ul>
           <li>Лекционный материал</li>
           <li>Тестовые задания</li>
           <li>Простое начало</li>
         </ul>
-        <a href="payment-page.html" class="btn-details">Подробнее</a>
+        <a href="#" class="btn-details">Подробнее</a>
       </div>
-      <div class="card">
+      <div class="card animate-on-scroll">
         <h3>Продвинутый</h3>
-        <div class="price">300 ₽</div>
+        <p class="price">300 ₽</p>
         <ul>
           <li>Все из базового</li>
           <li>Презентации с доп. контентом</li>
           <li>Проверочное тестирование</li>
         </ul>
-        <a href="payment-page.html" class="btn-details">Подробнее</a>
+        <a href="#" class="btn-details">Подробнее</a>
       </div>
-      <div class="card">
+      <div class="card animate-on-scroll">
         <h3>Профи</h3>
-        <div class="price">500 ₽</div>
+        <p class="price">500 ₽</p>
         <ul>
           <li>Полный доступ</li>
           <li>Презентации+видеоуроки</li>
           <li>Сертификат о прохождении курса</li>
         </ul>
-        <a href="payment-page.html" class="btn-details">Подробнее</a>
+        <a href="#" class="btn-details">Подробнее</a>
       </div>
     </div>
+
+    <!-- Кнопка "Оплатить" -->
     <div class="payment-button">
       <a href="payment-page.html" class="btn-pay">Оплатить</a>
     </div>
-  </section>
+  </div>
+</section>
 
-  <section class="reviews">
+<!-- Отзывы -->
+<section class="reviews">
+  <div class="container">
     <h2>Отзывы</h2>
     <div class="review-list">
-      <div class="review">
-        <p>Анна, Тула: Отличный курс по маркетингу! Всё понятно и по делу. Наконец-то начала понимать, как работает эта сфера.</p>
+      <div class="review animate-on-scroll">
+        <p><strong>Анна, Тула:</strong> Отличный курс по маркетингу! Всё понятно и по делу. Наконец-то начала понимать, как работает эта сфера.</p>
       </div>
-      <div class="review">
-        <p>Иван, Санкт-Петербург: Занятия по Python дали мне возможность перейти на новую должность. Рекомендую!</p>
+      <div class="review animate-on-scroll">
+        <p><strong>Иван, Санкт-Петербург:</strong> Занятия по Python дали мне возможность перейти на новую должность. Рекомендую!</p>
       </div>
-      <div class="review">
-        <p>Катя, Екатеринбург: Удобный формат обучения. Даже с работой успеваю учиться. Получила ценный опыт.</p>
+      <div class="review animate-on-scroll">
+        <p><strong>Катя, Екатеринбург:</strong> Удобный формат обучения. Даже с работой успеваю учиться. Получила ценный опыт.</p>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <section class="suggest-course">
+<!-- Предложить курс -->
+<section id="suggest-course" class="suggest-course">
+  <div class="container">
     <h2>Хочешь предложить свой курс?</h2>
     <p>Если вы преподаватель или эксперт — напишите нам и мы рассмотрим ваше предложение.</p>
     <a href="suggest-course.html" class="btn">Предложить курс</a>
-  </section>
+  </div>
+</section>
 
-  <footer class="footer">
+<!-- Yandex.RTB R-A-15521888-1 -->
+<div id="yandex_rtb_R-A-15521888-1"></div>
+<script>
+  window.yaContextCb.push(() => {
+    Ya.Context.AdvManager.render({
+      "blockId": "R-A-15521888-1",
+      "renderTo": "yandex_rtb_R-A-15521888-1"
+    })
+  })
+</script>
+
+<!-- Футер -->
+<footer class="footer">
+  <div class="container">
     <div class="footer-columns">
       <div class="footer-section">
-        <h3>Контакты организаторов</h3>
-        <p><i class="fas fa-envelope"></i> <a href="mailto:skillupruu@gmail.com">skillupruu@gmail.com</a></p>
-        <p><i class="fab fa-telegram"></i> <a href="https://t.me/skillup_supports">@skillup_supports</a></p>
+        <h4>Контакты организаторов</h4>
+        <p>
+          <i class="fa-regular fa-envelope"></i>
+          <a href="mailto:skillupruu@gmail.com" target="_blank" rel="noopener noreferrer">
+            skillupruu@gmail.com
+          </a>
+        </p>
+        <p>
+          <i class="fa-brands fa-telegram"></i>
+          <a href="https://t.me/skillup_supports " target="_blank">@skillup_supports</a>
+        </p>
       </div>
       <div class="footer-section">
-        <h3>Информация о проекте</h3>
+        <h4>Информация о проекте</h4>
         <p>© SkillUp 2025. Все права защищены.</p>
         <p><a href="privacy-policy.html">Политика конфиденциальности</a></p>
       </div>
       <div class="footer-section">
-        <h3>Предложить курс</h3>
-        <p>Если вы преподаватель или эксперт — напишите нам: <a href="mailto:skillupruu@gmail.com">skillupruu@gmail.com</a></p>
+        <h4>Предложить свой курс</h4>
+        <p>Если вы преподаватель или эксперт — напишите нам:
+          <a href="mailto:skillupruu@gmail.com" target="_blank">skillupruu@gmail.com</a>
+        </p>
       </div>
     </div>
-  </footer>
+  </div>
+</footer>
 
-  <script src="script.js"></script>
+<!-- JS для анимации появления при скролле -->
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const cards = document.querySelectorAll('.animate-on-scroll');
+
+    const observerOptions = {
+      threshold: 0.1
+    };
+
+    const observer = new IntersectionObserver((entries, observer) => {
+      entries.forEach((entry, index) => {
+        if (entry.isIntersecting) {
+          setTimeout(() => {
+            entry.target.classList.add('visible');
+          }, index * 150); // Задержка между карточками
+          observer.unobserve(entry.target);
+        }
+      });
+    }, observerOptions);
+
+    cards.forEach(card => {
+      observer.observe(card);
+    });
+  });
+</script>
+
+<!-- JS -->
+<script src="script.js"></script>
+
 </body>
 </html>
