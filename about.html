@@ -1,65 +1,118 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>SkillUp</title>
-  <link rel="stylesheet" href="style.css">
+  <title>О нас</title>
+
+  <!-- Favicon -->
+  <link rel="icon" href="assets/favicon.ico" type="image/x-icon">
+  <link rel="shortcut icon" href="assets/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="assets/favicon-16x16.png" sizes="16x16" type="image/png">
+  <link rel="icon" href="assets/favicon-32x32.png" sizes="32x32" type="image/png">
+  <link rel="icon" href="assets/favicon-64x64.png" sizes="64x64" type="image/png">
+  <link rel="icon" href="assets/favicon-128x128.png" sizes="128x128" type="image/png">
+  
+  <!-- Font Awesome CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css   " 
+        integrity="sha512-..." 
+        crossorigin="anonymous" />
+
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+
+  <!-- Шапка сайта -->
   <header class="header">
-    <div class="header-container">
-      <div class="logo">SkillUp</div>
-      <div class="burger-menu">☰</div>
+    <div class="container">
+      <h1 class="logo">SkillUp</h1>
       <nav class="nav">
-        <a href="index (6).html">Курсы</a>
-        <a href="about.html">О нас</a>
-        <a href="payment-page.html">Оплата</a>
-        <a href="support.html">Поддержка</a>
-        <a href="profile.html">Профиль</a>
-      </nav>
+  <a href="index">
+    <i class="fa-solid fa-book"></i> Курсы
+  </a>
+  <a href="/about" class="button about-button">
+    <i class="fa-solid fa-info-circle"></i> О нас
+  </a>
+  <a href="payment-page.html">
+    <i class="fa-solid fa-wallet"></i> Оплата
+  </a>
+  <a href="support.html">
+    <i class="fa-solid fa-headset"></i> Поддержка
+  </a>
+  <a href="profile.html">
+    <i class="fa-solid fa-user"></i> Профиль
+  </a>
+</nav>
     </div>
   </header>
 
+  <!-- О нас -->
   <section class="hero">
-    <h2>О SkillUp</h2>
-    <p>SkillUp — это онлайн-платформа, созданная специально для тех, кто стремится расти и развиваться в сферах информационных технологий, современного маркетинга и креативного дизайна.</p>
-    <p>Мы даем возможность людям с любым уровнем подготовки — от начинающих до опытных специалистов — осваивать новые профессии, углублять знания и оставаться востребованными в быстро меняющемся мире.</p>
+    <div class="container">
+      <h2>О SkillUp</h2>
+      
+      <div class="intro-text">
+        <p><strong>SkillUp</strong> — это онлайн-платформа, созданная специально для тех, кто стремится расти и развиваться в сферах информационных технологий, современного маркетинга и креативного дизайна.</p>
+        <p>Мы даем возможность людям с любым уровнем подготовки — от начинающих до опытных специалистов — осваивать новые профессии, углублять знания и оставаться востребованными в быстро меняющемся мире.</p>
+      </div>
 
-    <h2>Наша Миссия</h2>
-    <p><strong>Образование Доступно Каждому</strong></p>
-    <p>Главная цель SkillUp — сделать качественное образование не просто возможным, но и по-настоящему доступным. Мы убеждены, что каждый заслуживает шанс развить свои навыки, независимо от места проживания, финансовых возможностей или начального уровня подготовки.</p>
+      <div class="mission">
+        <h3>Наша Миссия</h3>
+        <p><strong>Образование Доступно Каждому</strong></p>
+        <p>Главная цель SkillUp — сделать качественное образование не просто возможным, но и по-настоящему доступным. Мы убеждены, что каждый заслуживает шанс развить свои навыки, независимо от места проживания, финансовых возможностей или начального уровня подготовки.</p>
+      </div>
 
-    <h2>Что Вы Получаете?</h2>
-    <ul>
-      <li>Курсы от экспертов: программы составляются практикующими специалистами, которые ежедневно сталкиваются с практическими вызовами в IT, маркетинге и дизайне.</li>
-      <li>Реальные проекты: каждое задание направлено на применение знаний — от создания первого сайта до разработки полноценного дизайн-проекта.</li>
-      <li>Активное сообщество: обучение становится возможностью общаться с единомышленниками, обмениваться опытом и поддерживать друг друга.</li>
-      <li>Поддержка на каждом этапе: преподаватели и студенты помогут разобраться в сложных моментах, дадут обратную связь и мотивируют двигаться вперед.</li>
-    </ul>
+      <div class="features">
+        <h3>Что Вы Получаете?</h3>
+        <ul>
+          <li><strong>Курсы от экспертов</strong>: программы составляются практикующими специалистами, которые ежедневно сталкиваются с практическими вызовами в IT, маркетинге и дизайне.</li>
+          <li><strong>Реальные проекты</strong>: каждое задание направлено на применение знаний — от создания первого сайта до разработки полноценного дизайн-проекта.</li>
+          <li><strong>Активное сообщество</strong>: обучение становится возможностью общаться с единомышленниками, обмениваться опытом и поддерживать друг друга.</li>
+          <li><strong>Поддержка на каждом этапе</strong>: преподаватели и студенты помогут разобраться в сложных моментах, дадут обратную связь и мотивируют двигаться вперед.</li>
+        </ul>
+      </div>
 
-    <h2>Почему SkillUp?</h2>
-    <p>Мы верим, что обучение должно быть не только полезным, но и вдохновляющим. Независимо от того, хотите ли вы начать карьеру с нуля или улучшить уже имеющиеся навыки, SkillUp предлагает структурированные программы, которые помогут достичь целей.</p>
-    <p>Мы делаем акцент на практике, реальных задачах и поддержке, чтобы вы могли не просто учиться, а расти как профессионал.</p>
+      <div class="why">
+        <h3>Почему SkillUp?</h3>
+        <p>Мы верим, что обучение должно быть не только полезным, но и вдохновляющим. Независимо от того, хотите ли вы начать карьеру с нуля или улучшить уже имеющиеся навыки, SkillUp предлагает структурированные программы, которые помогут достичь целей.</p>
+        <p>Мы делаем акцент на практике, реальных задачах и поддержке, чтобы вы могли не просто учиться, а расти как профессионал.</p>
+      </div>
 
-    <p><strong>Присоединяйтесь к SkillUp — и откройте для себя мир возможностей, которые откроют двери в будущее!</strong></p>
+      <div class="call-to-action">
+        <p><strong>Присоединяйтесь к SkillUp</strong> — и откройте для себя мир возможностей, которые откроют двери в будущее!</p>
+      </div>
+    </div>
   </section>
 
+  <!-- Футер -->
   <footer class="footer">
-    <div class="footer-columns">
-      <div class="footer-section">
-        <h3>Контакты организаторов</h3>
-        <p><i class="fas fa-envelope"></i> <a href="mailto:skillupruu@gmail.com">skillupruu@gmail.com</a></p>
-        <p><i class="fab fa-telegram"></i> <a href="https://t.me/skillup_supports">@skillup_supports</a></p>
-      </div>
-      <div class="footer-section">
-        <h3>Информация о проекте</h3>
-        <p>© SkillUp 2025. Все права защищены.</p>
-        <p><a href="privacy-policy.html">Политика конфиденциальности</a></p>
+    <div class="container">
+      <div class="footer-columns">
+        <div class="footer-section">
+          <h4>Контакты организаторов</h4>
+          <p>
+            <i class="fa-regular fa-envelope"></i>
+            <a href="mailto:skillupruu@gmail.com" 
+               target="_blank" 
+               rel="noopener noreferrer">
+              skillupruu@gmail.com
+            </a>
+          </p>
+          <p>
+            <i class="fa-brands fa-telegram"></i>
+            <a href="https://t.me/skillup_supports   " target="_blank">@skillup_supports</a>
+          </p>
+        </div>
+        <div class="footer-section">
+          <h4>Информация о проекте</h4>
+          <p>© SkillUp 2025. Все права защищены.</p>
+          <p><a href="privacy-policy.html">Политика конфиденциальности</a></p>
+        </div>
       </div>
     </div>
   </footer>
 
+  <!-- JS -->
   <script src="script.js"></script>
 </body>
 </html>
