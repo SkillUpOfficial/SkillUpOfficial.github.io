@@ -1,219 +1,139 @@
 <!DOCTYPE html>
+
 <html lang="ru">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>SkillUp — Курсы для развития</title>
-
-  <!-- Favicon -->
-  <link rel="icon" href="assets/favicon.ico" type="image/x-icon">
-  <link rel="shortcut icon" href="assets/favicon.ico" type="image/x-icon">
-  <link rel="icon" href="assets/favicon-16x16.png" sizes="16x16" type="image/png">
-  <link rel="icon" href="assets/favicon-32x32.png" sizes="32x32" type="image/png">
-  <link rel="icon" href="assets/favicon-64x64.png" sizes="64x64" type="image/png">
-  <link rel="icon" href="assets/favicon-128x128.png" sizes="128x128" type="image/png">
-
-  <!-- Font Awesome CDN -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css "
-        integrity="sha512-..." 
-        crossorigin="anonymous" />
-
-  <link rel="stylesheet" href="style.css" />
-
-  <!-- Yandex.RTB loader -->
-  <script>window.yaContextCb = window.yaContextCb || []</script>
-  <script src="https://yandex.ru/ads/system/context.js " async></script>
+    <meta charset="UTF-8">
+    <title>UrbanStep — интернет-магазин обуви</title>
+    <meta name="description" content="UrbanStep — интернет-магазин обуви. Кроссовки, ботинки и повседневная обувь с доставкой.">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
 
-<!-- Шапка сайта -->
-<header class="header">
-  <div class="container">
-    <h1 class="logo">SkillUp</h1>
-    <nav class="nav">
-      <a href="index"><i class="fa-solid fa-book"></i> Курсы</a>
-      <a href="/about" class="button about-button"><i class="fa-solid fa-info-circle"></i> О нас</a>
-      <a href="payment-page.html"><i class="fa-solid fa-wallet"></i> Оплата</a>
-      <a href="support.html"><i class="fa-solid fa-headset"></i> Поддержка</a>
-      <a href="profile.html"><i class="fa-solid fa-user"></i> Профиль</a>
-    </nav>
-  </div>
+<!-- ШАПКА САЙТА -->
+
+<header>
+    <div>
+        <h1>UrbanStep</h1>
+        <p>Интернет-магазин обуви</p>
+    </div>
+
+```
+<!-- НАВИГАЦИЯ -->
+<nav>
+    <ul>
+        <li><a href="index.html">Главная</a></li>
+        <li><a href="catalog.html">Каталог</a></li>
+        <li><a href="cart.html">Корзина</a></li>
+        <li><a href="profile.html">Личный кабинет</a></li>
+        <li><a href="contacts.html">Контакты</a></li>
+    </ul>
+</nav>
+
+<!-- ПЕРЕКЛЮЧЕНИЕ ТЕМЫ (пока интерфейс) -->
+<div>
+    <button>Светлая тема</button>
+    <button>Тёмная тема</button>
+</div>
+```
+
 </header>
 
-<!-- Главная секция -->
-<section class="hero">
-  <div class="container">
-    <h2>Обучайтесь новым навыкам легко!</h2>
-    <p>SkillUp — это платформа, которая помогает начинающим освоить актуальные профессии и развить профессиональные навыки. Мы предлагаем качественные онлайн-курсы с практическими заданиями, поддержкой преподавателей и сертификатами по окончании.</p>
-  </div>
+<hr>
+
+<!-- ОСНОВНОЕ СОДЕРЖИМОЕ -->
+
+<main>
+
+```
+<!-- О МАГАЗИНЕ -->
+<section>
+    <h2>О магазине UrbanStep</h2>
+    <p>
+        UrbanStep — это интернет-магазин обуви, ориентированный на современный городской стиль.
+        В нашем ассортименте представлены кроссовки, ботинки и повседневная обувь от популярных брендов.
+    </p>
+    <p>
+        Мы работаем напрямую с поставщиками, что позволяет поддерживать доступные цены
+        и гарантировать оригинальность продукции.
+    </p>
 </section>
 
-<!-- Популярные курсы -->
-<section id="courses" class="courses">
-  <div class="container">
-    <h2>Популярные курсы</h2>
-    <div class="course-list">
-      <div class="course animate-on-scroll">
-        <h3>Маркетинг для начинающих</h3>
-        <p>Курс для тех, кто хочет понять основы маркетинга. Продолжительность: 1 неделя. Уровень: Базовый.</p>
-        <a href="#" class="btn-details">Подробнее</a>
-      </div>
-      <div class="course animate-on-scroll">
-        <h3>Продвинутый Python</h3>
-        <p>Углубленное изучение языка Python. Продолжительность: 2 недели. Уровень: Средний.</p>
-        <a href="#" class="btn-details">Подробнее</a>
-      </div>
-      <div class="course animate-on-scroll">
-        <h3>UX/UI дизайн с нуля</h3>
-        <p>Создание удобных интерфейсов. Продолжительность: 3 недели. Уровень: Продвинутый.</p>
-        <a href="#" class="btn-details">Подробнее</a>
-      </div>
-    </div>
-  </div>
+<hr>
+
+<!-- КАТАЛОГ -->
+<section>
+    <h2>Каталог обуви</h2>
+
+    <article>
+        <h3>Nike Air Max</h3>
+        <p>Категория: Кроссовки</p>
+        <p>Размеры: 40–45</p>
+        <p>Цена: 12 990 ₽</p>
+        <button>Добавить в корзину</button>
+    </article>
+
+    <article>
+        <h3>Adidas Ultraboost</h3>
+        <p>Категория: Кроссовки</p>
+        <p>Размеры: 39–44</p>
+        <p>Цена: 14 490 ₽</p>
+        <button>Добавить в корзину</button>
+    </article>
+
+    <article>
+        <h3>Puma Street Rider</h3>
+        <p>Категория: Повседневная обувь</p>
+        <p>Размеры: 40–43</p>
+        <p>Цена: 10 990 ₽</p>
+        <button>Добавить в корзину</button>
+    </article>
 </section>
 
-<!-- Тарифы -->
-<section id="payment" class="pricing">
-  <div class="container">
-    <h2>Тарифы</h2>
-    <div class="price-cards">
-      <div class="card animate-on-scroll">
-        <h3>Базовый</h3>
-        <p class="price">150 ₽</p>
-        <ul>
-          <li>Лекционный материал</li>
-          <li>Тестовые задания</li>
-          <li>Простое начало</li>
-        </ul>
-        <a href="#" class="btn-details">Подробнее</a>
-      </div>
-      <div class="card animate-on-scroll">
-        <h3>Продвинутый</h3>
-        <p class="price">300 ₽</p>
-        <ul>
-          <li>Все из базового</li>
-          <li>Презентации с доп. контентом</li>
-          <li>Проверочное тестирование</li>
-        </ul>
-        <a href="#" class="btn-details">Подробнее</a>
-      </div>
-      <div class="card animate-on-scroll">
-        <h3>Профи</h3>
-        <p class="price">500 ₽</p>
-        <ul>
-          <li>Полный доступ</li>
-          <li>Презентации+видеоуроки</li>
-          <li>Сертификат о прохождении курса</li>
-        </ul>
-        <a href="#" class="btn-details">Подробнее</a>
-      </div>
-    </div>
+<hr>
 
-    <!-- Кнопка "Оплатить" -->
-    <div class="payment-button">
-      <a href="payment-page.html" class="btn-pay">Оплатить</a>
-    </div>
-  </div>
+<!-- ДОСТАВКА И ОПЛАТА -->
+<section>
+    <h2>Доставка и оплата</h2>
+    <ul>
+        <li>Доставка по всей России</li>
+        <li>Курьерская доставка и пункты выдачи</li>
+        <li>Оплата картой или при получении</li>
+    </ul>
 </section>
 
-<!-- Отзывы -->
-<section class="reviews">
-  <div class="container">
-    <h2>Отзывы</h2>
-    <div class="review-list">
-      <div class="review animate-on-scroll">
-        <p><strong>Анна, Тула:</strong> Отличный курс по маркетингу! Всё понятно и по делу. Наконец-то начала понимать, как работает эта сфера.</p>
-      </div>
-      <div class="review animate-on-scroll">
-        <p><strong>Иван, Санкт-Петербург:</strong> Занятия по Python дали мне возможность перейти на новую должность. Рекомендую!</p>
-      </div>
-      <div class="review animate-on-scroll">
-        <p><strong>Катя, Екатеринбург:</strong> Удобный формат обучения. Даже с работой успеваю учиться. Получила ценный опыт.</p>
-      </div>
-    </div>
-  </div>
+<hr>
+
+<!-- ПОДДЕРЖКА -->
+<section>
+    <h2>Служба поддержки</h2>
+    <p>Телефон: +7 (900) 000-00-00</p>
+    <p>Email: support@urbanstep.ru</p>
+    <p>Время работы: ежедневно с 9:00 до 21:00</p>
 </section>
+```
 
-<!-- Предложить курс -->
-<section id="suggest-course" class="suggest-course">
-  <div class="container">
-    <h2>Хочешь предложить свой курс?</h2>
-    <p>Если вы преподаватель или эксперт — напишите нам и мы рассмотрим ваше предложение.</p>
-    <a href="suggest-course.html" class="btn">Предложить курс</a>
-  </div>
-</section>
+</main>
 
-<!-- Yandex.RTB R-A-15521888-1 -->
-<div id="yandex_rtb_R-A-15521888-1"></div>
-<script>
-  window.yaContextCb.push(() => {
-    Ya.Context.AdvManager.render({
-      "blockId": "R-A-15521888-1",
-      "renderTo": "yandex_rtb_R-A-15521888-1"
-    })
-  })
-</script>
+<hr>
 
-<!-- Футер -->
-<footer class="footer">
-  <div class="container">
-    <div class="footer-columns">
-      <div class="footer-section">
-        <h4>Контакты организаторов</h4>
-        <p>
-          <i class="fa-regular fa-envelope"></i>
-          <a href="mailto:skillupruu@gmail.com" target="_blank" rel="noopener noreferrer">
-            skillupruu@gmail.com
-          </a>
-        </p>
-        <p>
-          <i class="fa-brands fa-telegram"></i>
-          <a href="https://t.me/skillup_supports " target="_blank">@skillup_supports</a>
-        </p>
-      </div>
-      <div class="footer-section">
-        <h4>Информация о проекте</h4>
-        <p>© SkillUp 2025. Все права защищены.</p>
-        <p><a href="privacy-policy.html">Политика конфиденциальности</a></p>
-      </div>
-      <div class="footer-section">
-        <h4>Предложить свой курс</h4>
-        <p>Если вы преподаватель или эксперт — напишите нам:
-          <a href="mailto:skillupruu@gmail.com" target="_blank">skillupruu@gmail.com</a>
-        </p>
-      </div>
-    </div>
-  </div>
+<!-- ПОДВАЛ САЙТА -->
+
+<footer>
+
+```
+<nav>
+    <ul>
+        <li><a href="privacy.html">Политика конфиденциальности</a></li>
+        <li><a href="terms.html">Пользовательское соглашение</a></li>
+        <li><a href="offer.html">Публичная оферта</a></li>
+        <li><a href="returns.html">Возврат и обмен</a></li>
+    </ul>
+</nav>
+
+<p>© 2026 UrbanStep. Все права защищены.</p>
+```
+
 </footer>
-
-<!-- JS для анимации появления при скролле -->
-<script>
-  document.addEventListener("DOMContentLoaded", function () {
-    const cards = document.querySelectorAll('.animate-on-scroll');
-
-    const observerOptions = {
-      threshold: 0.1
-    };
-
-    const observer = new IntersectionObserver((entries, observer) => {
-      entries.forEach((entry, index) => {
-        if (entry.isIntersecting) {
-          setTimeout(() => {
-            entry.target.classList.add('visible');
-          }, index * 150); // Задержка между карточками
-          observer.unobserve(entry.target);
-        }
-      });
-    }, observerOptions);
-
-    cards.forEach(card => {
-      observer.observe(card);
-    });
-  });
-</script>
-
-<!-- JS -->
-<script src="script.js"></script>
 
 </body>
 </html>
